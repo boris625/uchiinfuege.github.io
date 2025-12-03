@@ -1,0 +1,2265 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>УЧИ ИНФУ ЕГЭ - Подготовка к ЕГЭ по информатике 2024</title>
+    <style>
+        /* Сброс стилей и базовые настройки */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+        }
+
+        /* Шапка сайта */
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 1rem 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+        }
+
+        .logo span {
+            color: #ffd700;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 2rem;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #ffd700;
+        }
+
+        /* Герой-секция */
+        .hero {
+            padding: 4rem 0;
+            text-align: center;
+            background: white;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #333;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            color: #666;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Секция заданий */
+        .tasks {
+            padding: 4rem 0;
+            background: #f8f9fa;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-title h2 {
+            font-size: 2rem;
+            color: #333;
+            margin-bottom: 1rem;
+        }
+
+        .task-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .task-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+            cursor: pointer;
+            border: 2px solid transparent;
+        }
+
+        .task-card:hover {
+            transform: translateY(-5px);
+            border-color: #667eea;
+        }
+
+        .task-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #333;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .task-number {
+            background: #667eea;
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .task-number:hover {
+            background: #764ba2;
+            transform: scale(1.1);
+        }
+
+        .task-content {
+            max-height: 200px;
+            overflow-y: auto;
+            margin-bottom: 1rem;
+            padding: 1rem;
+            background: #f8f9fa;
+            border-radius: 5px;
+            font-family: monospace;
+            font-size: 0.9rem;
+            line-height: 1.4;
+        }
+
+        .task-content::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .task-content::-webkit-scrollbar-thumb {
+            background: #667eea;
+            border-radius: 3px;
+        }
+
+        .task-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        .task-tag {
+            background: #e9ecef;
+            padding: 0.3rem 0.7rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            color: #495057;
+        }
+
+        /* Секция справочных материалов */
+        .reference {
+            padding: 4rem 0;
+            background: white;
+        }
+
+        .reference-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .reference-card {
+            background: #f8f9fa;
+            padding: 2rem;
+            border-radius: 10px;
+            border-left: 4px solid #667eea;
+        }
+
+        .reference-card h3 {
+            margin-bottom: 1rem;
+            color: #333;
+        }
+
+        .reference-code {
+            background: #2d3748;
+            color: #e2e8f0;
+            padding: 1.5rem;
+            border-radius: 5px;
+            font-family: monospace;
+            white-space: pre-wrap;
+            line-height: 1.5;
+            margin: 1rem 0;
+            overflow-x: auto;
+        }
+
+        /* Секция статистики */
+        .stats {
+            padding: 4rem 0;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-align: center;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+        }
+
+        .stat-item h3 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Подвал */
+        footer {
+            background: #333;
+            color: white;
+            padding: 3rem 0 1rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h3 {
+            margin-bottom: 1rem;
+            color: #ffd700;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid #444;
+        }
+
+        /* Дополнительные стили для ЕГЭ */
+        .theory-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            margin-bottom: 2rem;
+            border-left: 4px solid #667eea;
+            scroll-margin-top: 80px; /* Отступ для якорной навигации */
+        }
+
+        .quick-nav {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin: 1.5rem 0;
+            justify-content: center;
+        }
+
+        .quick-nav a {
+            background: #667eea;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            text-decoration: none;
+            transition: background 0.3s;
+        }
+
+        .quick-nav a:hover {
+            background: #764ba2;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+            background: white;
+            border-radius: 5px;
+            overflow: hidden;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+
+        th, td {
+            padding: 0.75rem;
+            text-align: left;
+        }
+
+        th {
+            background-color: #667eea;
+            color: white;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+
+        .task-details {
+            margin-top: 3rem;
+        }
+
+        .task-detail-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            margin-bottom: 2rem;
+            border-left: 4px solid #667eea;
+            scroll-margin-top: 80px; /* Отступ для якорной навигации */
+        }
+
+        .task-detail-card h3 {
+            color: #333;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .highlight {
+            background-color: #fff9e6;
+            padding: 1rem;
+            border-radius: 5px;
+            border-left: 4px solid #ffd700;
+            margin: 1rem 0;
+        }
+
+        /* Адаптивность */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            nav ul li {
+                margin: 0.5rem;
+            }
+
+            .task-grid, .reference-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .quick-nav {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .quick-nav a {
+                width: 80%;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Шапка сайта -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">УЧИ<span>.ИНФУ ЕГЭ</span></div>
+                <nav>
+                    <ul>
+                        <li><a href="#">Главная</a></li>
+                        <li><a href="#tasks">Задания</a></li>
+                        <li><a href="#task-details">Разборы</a></li>
+                        <li><a href="#reference">Справочник</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Главная секция -->
+    <section class="hero">
+        <div class="container">
+            <h1>Полная подготовка к ЕГЭ по информатике 2025</h1>
+            <p>Интерактивная платформа для эффективной подготовки к экзамену. Теория, практика и справочные материалы в одном месте. Теперь с полным набором заданий 1-21!</p>
+        </div>
+    </section>
+
+    <!-- Секция заданий -->
+    <section class="tasks" id="tasks">
+        <div class="container">
+            <div class="section-title">
+                <h2>Задания ЕГЭ (1-21)</h2>
+                <p>Нажмите на номер задания для перехода к подробному разбору</p>
+            </div>
+            
+            <div class="quick-nav">
+                <a href="#task1">Задание 1</a>
+                <a href="#task2">Задание 2</a>
+                <a href="#task3">Задание 3</a>
+                <a href="#task4">Задание 4</a>
+                <a href="#task5">Задание 5</a>
+                <a href="#task6">Задание 6</a>
+                <a href="#task7">Задание 7</a>
+                <a href="#task8">Задание 8</a>
+                <a href="#task9">Задание 9</a>
+                <a href="#task10">Задание 10</a>
+                <a href="#task11">Задание 11</a>
+                <a href="#task12">Задание 12</a>
+                <a href="#task13">Задание 13</a>
+                <a href="#task14">Задание 14</a>
+                <a href="#task15">Задание 15</a>
+                <a href="#task16">Задание 16</a>
+                <a href="#task17">Задание 17</a>
+                <a href="#task18">Задание 18</a>
+                <a href="#task19">Задание 19-21</a>
+            </div>
+            
+            <div class="task-grid">
+                <!-- Задание 1 -->
+                <div class="task-card">
+                    <h3><span class="task-number" onclick="scrollToTask('task1')">1</span> Задание №1</h3>
+                    <p>Графы и кратчайшие пути</p>
+                    <div class="task-content">
+Граф - множество вершин и ребер
+Степень вершины - количество исходящих ребер
+Матрица смежности - представление графа
+                    </div>
+                    <div class="task-tags">
+                        <span class="task-tag">Графы</span>
+                        <span class="task-tag">Матрицы</span>
+                        <span class="task-tag">Пути</span>
+                    </div>
+                </div>
+                
+                <!-- Задание 2 -->
+                <div class="task-card">
+                    <h3><span class="task-number" onclick="scrollToTask('task2')">2</span> Задание №2</h3>
+                    <p>Логические выражения</p>
+                    <div class="task-content">
+Логические операции:
+- Конъюнкция (И, ∧)
+- Дизъюнкция (ИЛИ, ∨)
+- Отрицание (НЕ, ¬)
+- Импликация (→)
+- Эквивалентность (≡)
+                    </div>
+                    <div class="task-tags">
+                        <span class="task-tag">Логика</span>
+                        <span class="task-tag">Таблицы</span>
+                        <span class="task-tag">Выражения</span>
+                    </div>
+                </div>
+                
+                <!-- Задание 3 -->
+                <div class="task-card">
+                    <h3><span class="task-number" onclick="scrollToTask('task3')">3</span> Задание №3</h3>
+                    <p>Базы данных и Excel</p>
+                    <div class="task-content">
+Функции Excel:
+- Сортировка
+- Фильтрация
+- ВПР()
+- СЧЁТЕСЛИ()
+- СУММЕСЛИ()
+                    </div>
+                    <div class="task-tags">
+                        <span class="task-tag">Excel</span>
+                        <span class="task-tag">Базы данных</span>
+                        <span class="task-tag">Формулы</span>
+                    </div>
+                </div>
+                
+                <!-- Задание 4 -->
+                <div class="task-card">
+                    <h3><span class="task-number" onclick="scrollToTask('task4')">4</span> Задание №4</h3>
+                    <p>Кодирование информации</p>
+                    <div class="task-content">
+Условие Фано:
+- Ни одно кодовое слово не является началом другого
+Обратное условие Фано:
+- Ни одно кодовое слово не является концом другого
+Алгоритм Хаффмана
+                    </div>
+                    <div class="task-tags">
+                        <span class="task-tag">Кодирование</span>
+                        <span class="task-tag">Фано</span>
+                        <span class="task-tag">Хаффман</span>
+                    </div>
+                </div>
+                
+                <!-- Задание 5 -->
+                <div class="task-card">
+                    <h3><span class="task-number" onclick="scrollToTask('task5')">5</span> Задание №5</h3>
+                    <p>Системы счисления</p>
+                    <div class="task-content">
+Перевод между системами:
+- bin(x)[2:] - в двоичную
+- oct(x)[2:] - в восьмеричную
+- hex(x)[2:] - в шестнадцатеричную
+- int(x, y) - в десятичную из системы y
+                    </div>
+                    <div class="task-tags">
+                        <span class="task-tag">Системы</span>
+                        <span class="task-tag">Числа</span>
+                        <span class="task-tag">Перевод</span>
+                    </div>
+                </div>
+                
+                <!-- Задание 6 -->
+                <div class="task-card">
+                    <h3><span class="task-number" onclick="scrollToTask('task6')">6</span> Задание №6</h3>
+                    <p>Исполнитель Черепаха</p>
+                    <div class="task-content">
+Команды Черепахи:
+- вперед(n)
+- назад(n)
+- влево(m)
+- вправо(m)
+- опустить хвост
+- поднять хвост
+                    </div>
+                    <div class="task-tags">
+                        <span class="task-tag">Черепаха</span>
+                        <span class="task-tag">Кумир</span>
+                        <span class="task-tag">Python</span>
+                    </div>
+                </div>
+                
+                <!-- Задание 7 -->
+                <div class="task-card">
+                    <h3><span class="task-number" onclick="scrollToTask('task7')">7</span> Задание №7</h3>
+                    <p>Кодирование информации</p>
+                    <div class="task-content">
+Формулы:
+- N = 2^i (количество цветов)
+- I = P * i (объем изображения)
+- I = k * i * v * t (объем звука)
+- I = V * t (передача информации)
+                    </div>
+                    <div class="task-tags">
+                        <span class="task-tag">Информация</span>
+                        <span class="task-tag">Формулы</span>
+                        <span class="task-tag">Единицы</span>
+                    </div>
+                </div>
+                
+                <!-- Задание 8 -->
+                <div class="task-card">
+                    <h3><span class="task-number" onclick="scrollToTask('task8')">8</span> Задание №8</h3>
+                    <p>Комбинаторика</p>
+                    <div class="task-content">
+Формулы:
+- Размещения с повторениями: A_n^k = n^k
+- Размещения без повторений: A_n^k = n!/(n-k)!
+- Перестановки: P_n = n!
+- Сочетания: C_n^k = n!/((n-k)!*k!)
+                    </div>
+                    <div class="task-tags">
+                        <span class="task-tag">Комбинаторика</span>
+                        <span class="task-tag">Формулы</span>
+                        <span class="task-tag">Python</span>
+                    </div>
+                </div>
+                
+                <!-- Задание 9 -->
+                <div class="task-card">
+                    <h3><span class="task-number" onclick="scrollToTask('task9')">9</span> Задание №9</h3>
+                    <p>Анализ данных в Excel</p>
+                    <div class="task-content">
+Функции Excel:
+- СУММ()
+- СЧЁТ()
+- СРЗНАЧ()
+- МАКС()
+- МИН()
+- ЕСЛИ()
+- СЧЁТЕСЛИ()
+- СУММЕСЛИ()
+                    </div>
+                    <div class="task-tags">
+                        <span class="task-tag">Excel</span>
+                        <span class="task-tag">Анализ</span>
+                        <span class="task-tag">Формулы</span>
+                    </div>
+                </div>
+                
+                <!-- Задание 10 -->
+                <div class="task-card">
+                    <h3><span class="task-number" onclick="scrollToTask('task10')">10</span> Задание №10</h3>
+                    <p>Поиск слов в тексте</p>
+                    <div class="task-content">
+Поиск в текстовых редакторах:
+- Ctrl+H - поиск и замена
+- Учитывать регистр
+- Только слово целиком
+- Исключение сносок
+                    </div>
+                    <div class="task-tags">
+                        <span class="task-tag">Текст</span>
+                        <span class="task-tag">Поиск</span>
+                        <span class="task-tag">Word</span>
+                    </div>
+                </div>
+                
+                <!-- Задание 11 -->
+                <div class="task-card">
+                    <h3><span class="task-number" onclick="scrollToTask('task11')">11</span> Задание №11</h3>
+                    <p>Кодирование информации</p>
+                    <div class="task-content">
+Формулы:
+- N = 2^i
+- I = K * i
+- I = (I + Iextra) * n
+- Перевод в байты
+                    </div>
+                    <div class="task-tags">
+                        <span class="task-tag">Кодирование</span>
+                        <span class="task-tag">Формулы</span>
+                        <span class="task-tag">Пароли</span>
+                    </div>
+                </div>
+                
+                <!-- Задание 12 -->
+                <div class="task-card">
+                    <h3><span class="task-number" onclick="scrollToTask('task12')">12</span> Задание №12</h3>
+                    <p>Исполнители Редактор и Чертежник</p>
+                    <div class="task-content">
+Исполнитель Редактор:
+- заменить(v, w)
+- нашлось(v)
+- циклы ПОКА
+- конструкции ЕСЛИ
+                    </div>
+                    <div class="task-tags">
+                        <span class="task-tag">Редактор</span>
+                        <span class="task-tag">Чертежник</span>
+                        <span class="task-tag">Алгоритмы</span>
+                    </div>
+                </div>
+                
+                <!-- Задание 13 -->
+                <div class="task-card">
+                    <h3><span class="task-number" onclick="scrollToTask('task13')">13</span> Задание №13</h3>
+                    <p>IP-адреса и сети</p>
+                    <div class="task-content">
+IP-адрес: 4 байта
+Маска сети: определяет сеть и узел
+Адрес сети: поразрядная конъюнкция
+Модуль ipaddress в Python
+                    </div>
+                    <div class="task-tags">
+                        <span class="task-tag">Сети</span>
+                        <span class="task-tag">IP-адреса</span>
+                        <span class="task-tag">Python</span>
+                    </div>
+                </div>
+                
+                <!-- Задание 14 -->
+                <div class="task-card">
+                    <h3><span class="task-number" onclick="scrollToTask('task14')">14</span> Задание №14</h3>
+                    <p>Системы счисления</p>
+                    <div class="task-content">
+Перевод между системами:
+- bin(x)[2:]
+- oct(x)[2:]
+- hex(x)[2:]
+- int(x, y)
+- Алгоритм деления
+                    </div>
+                    <div class="task-tags">
+                        <span class="task-tag">Системы</span>
+                        <span class="task-tag">Числа</span>
+                        <span class="task-tag">Перевод</span>
+                    </div>
+                </div>
+                
+                <!-- Задание 15 -->
+                <div class="task-card">
+                    <h3><span class="task-number" onclick="scrollToTask('task15')">15</span> Задание №15</h3>
+                    <p>Логические выражения</p>
+                    <div class="task-content">
+Логические операции:
+- Конъюнкция
+- Дизъюнкция
+- Отрицание
+- Импликация
+- Эквивалентность
+                    </div>
+                    <div class="task-tags">
+                        <span class="task-tag">Логика</span>
+                        <span class="task-tag">Выражения</span>
+                        <span class="task-tag">Таблицы</span>
+                    </div>
+                </div>
+                
+                <!-- Задание 16 -->
+                <div class="task-card">
+                    <h3><span class="task-number" onclick="scrollToTask('task16')">16</span> Задание №16</h3>
+                    <p>Рекурсия</p>
+                    <div class="task-content">
+Рекурсия - вызов функции самой себя
+Базовый случай - условие выхода
+Рекуррентное соотношение
+Динамическое программирование
+                    </div>
+                    <div class="task-tags">
+                        <span class="task-tag">Рекурсия</span>
+                        <span class="task-tag">Функции</span>
+                        <span class="task-tag">Python</span>
+                    </div>
+                </div>
+                
+                <!-- Задание 17 -->
+                <div class="task-card">
+                    <h3><span class="task-number" onclick="scrollToTask('task17')">17</span> Задание №17</h3>
+                    <p>Работа с файлами</p>
+                    <div class="task-content">
+Работа с файлами в Python:
+- open(), read(), close()
+- Контекстный менеджер with
+- Обработка числовых последовательностей
+- Поиск пар, троек, n-ок
+                    </div>
+                    <div class="task-tags">
+                        <span class="task-tag">Файлы</span>
+                        <span class="task-tag">Python</span>
+                        <span class="task-tag">Последовательности</span>
+                    </div>
+                </div>
+                
+                <!-- Задание 18 -->
+                <div class="task-card">
+                    <h3><span class="task-number" onclick="scrollToTask('task18')">18</span> Задание №18</h3>
+                    <p>Электронные таблицы</p>
+                    <div class="task-content">
+Работа в Excel:
+- Формулы МАКС(), МИН(), ЕСЛИ()
+- Динамическое программирование
+- Робот на поле
+- Задачи с препятствиями
+                    </div>
+                    <div class="task-tags">
+                        <span class="task-tag">Excel</span>
+                        <span class="task-tag">Таблицы</span>
+                        <span class="task-tag">Динамика</span>
+                    </div>
+                </div>
+                
+                <!-- Задание 19-21 -->
+                <div class="task-card">
+                    <h3><span class="task-number" onclick="scrollToTask('task19')">19-21</span> Задание №19-21</h3>
+                    <p>Теория игр</p>
+                    <div class="task-content">
+Теория игр в КЕГЭ:
+- Задачи на одну кучу камней
+- Задачи на две кучи
+- Неудачные ходы
+- Программные решения на Python
+                    </div>
+                    <div class="task-tags">
+                        <span class="task-tag">Игры</span>
+                        <span class="task-tag">Стратегии</span>
+                        <span class="task-tag">Python</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Секция подробных разборов заданий -->
+    <section class="tasks" id="task-details">
+        <div class="container">
+            <div class="section-title">
+                <h2>Подробные разборы заданий (1-21)</h2>
+                <p>Полные объяснения и примеры решений для каждого задания</p>
+            </div>
+            
+            <div class="task-details">
+                <!-- Задание 1 -->
+                <div class="task-detail-card" id="task1">
+                    <h3><span class="task-number">1</span> Задание №1: Графы и кратчайшие пути</h3>
+                    
+                    <p><strong>Основные понятия:</strong></p>
+                    <ul>
+                        <li><strong>Граф</strong> - конечное множество точек (вершин), соединенных линиями (ребрами)</li>
+                        <li><strong>Вершина</strong> - точка графа</li>
+                        <li><strong>Ребро</strong> - линия, соединяющая вершины</li>
+                        <li><strong>Степень вершины</strong> - количество ребер, исходящих из вершины</li>
+                        <li><strong>Матрица смежности</strong> - способ представления графа в виде квадратной матрицы</li>
+                    </ul>
+                    
+                    <p><strong>Типы графов:</strong></p>
+                    <ul>
+                        <li><strong>Неориентированный</strong> - ребра не имеют направления</li>
+                        <li><strong>Ориентированный</strong> - каждому ребру присвоено направление</li>
+                        <li><strong>Взвешенный</strong> - каждому ребру соответствует значение (вес)</li>
+                    </ul>
+                    
+                    <div class="highlight">
+                        <p><strong>Пример из учебника:</strong> Между населенными пунктами А, В, С, D, E, F построены дороги, протяженность которых приведена в таблице. Определите длину кратчайшего пути между пунктами А и В.</p>
+                    </div>
+                    
+                    <p><strong>Решение:</strong></p>
+                    <ol>
+                        <li>Находим все возможные пути из A в B</li>
+                        <li>Вычисляем длину каждого пути</li>
+                        <li>Выбираем путь с минимальной длиной</li>
+                    </ol>
+                    
+                    <p><strong>Ответ:</strong> 2</p>
+                </div>
+                
+                <!-- Задание 2 -->
+                <div class="task-detail-card" id="task2">
+                    <h3><span class="task-number">2</span> Задание №2: Логические выражения</h3>
+                    
+                    <p><strong>Логические операции:</strong></p>
+                    
+                    <table>
+                        <tr>
+                            <th>Операция</th>
+                            <th>Обозначение</th>
+                            <th>Описание</th>
+                        </tr>
+                        <tr>
+                            <td>Конъюнкция</td>
+                            <td>И, &, ∧</td>
+                            <td>Истинна, когда оба выражения истинны</td>
+                        </tr>
+                        <tr>
+                            <td>Дизъюнкция</td>
+                            <td>ИЛИ, +, ∨</td>
+                            <td>Истинна, когда хотя бы одно выражение истинно</td>
+                        </tr>
+                        <tr>
+                            <td>Отрицание</td>
+                            <td>НЕ, ¬</td>
+                            <td>Инвертирует значение выражения</td>
+                        </tr>
+                        <tr>
+                            <td>Импликация</td>
+                            <td>→</td>
+                            <td>Ложно только когда из истины следует ложь</td>
+                        </tr>
+                        <tr>
+                            <td>Эквивалентность</td>
+                            <td>≡</td>
+                            <td>Истинна, когда оба выражения равны</td>
+                        </tr>
+                    </table>
+                    
+                    <p><strong>Порядок выполнения операций:</strong></p>
+                    <ol>
+                        <li>Действия в скобках</li>
+                        <li>Отрицание</li>
+                        <li>Конъюнкция</li>
+                        <li>Дизъюнкция</li>
+                        <li>Импликация</li>
+                        <li>Эквивалентность</li>
+                    </ol>
+                    
+                    <div class="highlight">
+                        <p><strong>Пример из учебника:</strong> Логическая функция F задается выражением (x ∧ ¬z) ∨ (¬y ∧ ¬z). Определите, какому столбцу таблицы соответствует каждая из переменных x, y, z.</p>
+                    </div>
+                    
+                    <p><strong>Решение:</strong></p>
+                    <ol>
+                        <li>Составляем таблицу истинности для функции</li>
+                        <li>Сравниваем с данной таблицей</li>
+                        <li>Определяем соответствие переменных столбцам</li>
+                    </ol>
+                    
+                    <p><strong>Ответ:</strong> xyz</p>
+                </div>
+                
+                <!-- Задание 3 -->
+                <div class="task-detail-card" id="task3">
+                    <h3><span class="task-number">3</span> Задание №3: Базы данных и Excel</h3>
+                    
+                    <p><strong>Основные функции Excel:</strong></p>
+                    
+                    <table>
+                        <tr>
+                            <th>Функция</th>
+                            <th>Описание</th>
+                            <th>Пример</th>
+                        </tr>
+                        <tr>
+                            <td>Сортировка</td>
+                            <td>Упорядочивание данных по определенному столбцу</td>
+                            <td>Данные → Сортировка</td>
+                        </tr>
+                        <tr>
+                            <td>Фильтрация</td>
+                            <td>Отображение только строк, удовлетворяющих условиям</td>
+                            <td>Данные → Фильтр</td>
+                        </tr>
+                        <tr>
+                            <td>ВПР()</td>
+                            <td>Поиск значения по строке в таблице</td>
+                            <td>=ВПР(A2; B2:C10; 2; 0)</td>
+                        </tr>
+                        <tr>
+                            <td>СЧЁТЕСЛИ()</td>
+                            <td>Подсчет ячеек, удовлетворяющих условию</td>
+                            <td>=СЧЁТЕСЛИ(A2:A10; ">5")</td>
+                        </tr>
+                        <tr>
+                            <td>СУММЕСЛИ()</td>
+                            <td>Суммирование значений, удовлетворяющих условию</td>
+                            <td>=СУММЕСЛИ(A2:A10; ">5"; B2:B10)</td>
+                        </tr>
+                    </table>
+                    
+                    <div class="highlight">
+                        <p><strong>Пример из учебника:</strong> В файле приведен фрагмент базы данных «Кондитерские изделия». Определите общую массу всех видов мармелада, проданных магазинами в Центральном районе за период с 1 по 15 июня включительно.</p>
+                    </div>
+                    
+                    <p><strong>Решение:</strong></p>
+                    <ol>
+                        <li>Используем функцию ВПР() для переноса данных из связанных таблиц</li>
+                        <li>Применяем фильтр по типу операции, типу продукта и району</li>
+                        <li>Вычисляем общую массу проданного товара</li>
+                    </ol>
+                    
+                    <p><strong>Ответ:</strong> 6.37 центнеров</p>
+                </div>
+                
+                <!-- Задание 4 -->
+                <div class="task-detail-card" id="task4">
+                    <h3><span class="task-number">4</span> Задание №4: Кодирование информации</h3>
+                    
+                    <p><strong>Основные понятия:</strong></p>
+                    <ul>
+                        <li><strong>Условие Фано</strong> - ни одно кодовое слово не является началом другого</li>
+                        <li><strong>Обратное условие Фано</strong> - ни одно кодовое слово не является концом другого</li>
+                        <li><strong>Алгоритм Хаффмана</strong> - метод построения префиксного двоичного кода минимальной длины</li>
+                    </ul>
+                    
+                    <p><strong>Алгоритм Хаффмана:</strong></p>
+                    <ol>
+                        <li>Создать для каждого символа узел с его частотой появления</li>
+                        <li>Поместить узлы в приоритетную очередь, отсортированную по возрастанию частот</li>
+                        <li>Пока в очереди больше одного узла:
+                            <ul>
+                                <li>Извлечь два узла с наименьшими частотами</li>
+                                <li>Создать новый узел с частотой, равной сумме частот извлеченных узлов</li>
+                                <li>Назначить извлеченные узлы левым (0) и правым (1) потомками нового узла</li>
+                                <li>Поместить новый узел обратно в очередь</li>
+                            </ul>
+                        </li>
+                        <li>Полученное дерево задает коды: путь от корня к символу дает кодовое слово</li>
+                    </ol>
+                    
+                    <div class="highlight">
+                        <p><strong>Пример из учебника:</strong> По каналу связи передаются сообщения, содержащие только семь букв: П, И, Ф, А, Г, О, Р. Для букв П, И, Ф используются такие кодовые слова: П – 1, И – 011, Ф – 001. Укажите кратчайшее кодовое слово для буквы А.</p>
+                    </div>
+                    
+                    <p><strong>Решение:</strong></p>
+                    <ol>
+                        <li>Строим двоичное дерево кодов</li>
+                        <li>Находим свободные ветки</li>
+                        <li>Выбираем кратчайшее кодовое слово</li>
+                    </ol>
+                    
+                    <p><strong>Ответ:</strong> 000</p>
+                </div>
+                
+                <!-- Задание 5 -->
+                <div class="task-detail-card" id="task5">
+                    <h3><span class="task-number">5</span> Задание №5: Системы счисления</h3>
+                    
+                    <p><strong>Перевод между системами счисления в Python:</strong></p>
+                    
+                    <div class="reference-code">
+# Перевод в двоичную систему
+x = 156
+res2 = bin(x)[2:]
+
+# Перевод в восьмеричную систему
+res8 = oct(x)[2:]
+
+# Перевод в шестнадцатеричную систему
+res16 = hex(x)[2:]
+
+# Перевод в десятичную систему из любой
+x = '830'
+res10 = int(x, 9)  # из 9-чной системы
+                    </div>
+                    
+                    <p><strong>Алгоритм перевода из 10-й системы в любую другую:</strong></p>
+                    <ol>
+                        <li>Делим исходное число на основание новой системы счисления</li>
+                        <li>Остаток от деления - новая найденная цифра числа</li>
+                        <li>Целую часть от деления снова делим на основание</li>
+                        <li>Повторяем, пока целая часть не станет равна 0</li>
+                        <li>Полученные цифры читаем в обратном порядке</li>
+                    </ol>
+                    
+                    <div class="highlight">
+                        <p><strong>Пример из учебника:</strong> На вход алгоритма подается натуральное число N. Алгоритм строит по нему новое число R: строится двоичная запись числа N, к этой записи дописываются справа еще два разряда по правилу: дописывается бит четности, затем еще один бит четности. Укажите минимальное число N, после обработки которого получается число, большее, чем 78.</p>
+                    </div>
+                    
+                    <p><strong>Решение:</strong></p>
+                    <ol>
+                        <li>Перебираем числа от 1 до 78</li>
+                        <li>Для каждого числа выполняем алгоритм</li>
+                        <li>Находим первое число, дающее результат > 78</li>
+                    </ol>
+                    
+                    <p><strong>Ответ:</strong> 20</p>
+                </div>
+                
+                <!-- Задание 6 -->
+                <div class="task-detail-card" id="task6">
+                    <h3><span class="task-number">6</span> Задание №6: Исполнитель Черепаха</h3>
+                    
+                    <p><strong>Команды Черепахи в Кумире:</strong></p>
+                    
+                    <div class="reference-code">
+использовать Черепаха
+алг
+нач
+  опустить хвост
+  нц 5 раз
+    вперед(10)
+    вправо(90)
+  кц
+кон
+                    </div>
+                    
+                    <p><strong>Команды Черепахи в Python:</strong></p>
+                    
+                    <div class="reference-code">
+from turtle import *
+
+tracer(0)  # Убираем анимацию
+screensize(1000, 1000)  # Устанавливаем размер окна
+m = 50  # Масштаб
+
+left(90)  # Поворачиваем голову вверх
+
+for i in range(10):
+    forward(8*m)
+    right(120)
+
+pu()  # Поднимаем хвост
+for x in range(-20, 20):
+    for y in range(-20, 20):
+        goto(x*m, y*m)
+        dot(5)
+
+done()
+                    </div>
+                    
+                    <div class="highlight">
+                        <p><strong>Пример из учебника:</strong> Исполнитель Черепаха действует на плоскости. В начальный момент Черепаха находится в начале координат, её голова направлена вдоль положительного направления оси ординат, хвост опущен. Черепахе был дан для исполнения следующий алгоритм: Повтори 10 [Вперёд 8 Направо 120]. Определите, сколько точек с целочисленными координатами будут находиться внутри области, ограниченной линией.</p>
+                    </div>
+                    
+                    <p><strong>Решение:</strong></p>
+                    <ol>
+                        <li>Запускаем программу для Черепахи</li>
+                        <li>Строим полученную фигуру</li>
+                        <li>Считаем точки с целочисленными координатами внутри фигуры</li>
+                    </ol>
+                    
+                    <p><strong>Ответ:</strong> 24</p>
+                </div>
+                
+                <!-- Задание 7 -->
+                <div class="task-detail-card" id="task7">
+                    <h3><span class="task-number">7</span> Задание №7: Кодирование информации</h3>
+                    
+                    <p><strong>Основные формулы:</strong></p>
+                    
+                    <table>
+                        <tr>
+                            <th>Тип информации</th>
+                            <th>Формула</th>
+                            <th>Обозначения</th>
+                        </tr>
+                        <tr>
+                            <td>Графическая</td>
+                            <td>I = P · i</td>
+                            <td>P - количество пикселей, i - глубина цвета</td>
+                        </tr>
+                        <tr>
+                            <td>Звуковая</td>
+                            <td>I = k · i · v · t</td>
+                            <td>k - каналы, i - глубина, v - частота, t - время</td>
+                        </tr>
+                        <tr>
+                            <td>Видео</td>
+                            <td>I = P · i · v · t</td>
+                            <td>P - размер кадра, v - частота кадров</td>
+                        </tr>
+                        <tr>
+                            <td>Передача</td>
+                            <td>I = V · t</td>
+                            <td>V - скорость, t - время</td>
+                        </tr>
+                    </table>
+                    
+                    <p><strong>Единицы измерения:</strong></p>
+                    <ul>
+                        <li>1 байт = 8 бит</li>
+                        <li>1 Кбайт = 1024 байт</li>
+                        <li>1 Мбайт = 1024 Кбайт</li>
+                        <li>1 Гбайт = 1024 Мбайт</li>
+                        <li>1 Кбит = 1000 бит</li>
+                        <li>1 Мбит = 1000 Кбит</li>
+                    </ul>
+                    
+                    <div class="highlight">
+                        <p><strong>Пример из учебника:</strong> Марафонцы решили нарисовать капибар. Сколько байт будет весить картина с капибарами размером 120 × 60 пикселей? В палитре используется 283 цвета.</p>
+                    </div>
+                    
+                    <p><strong>Решение:</strong></p>
+                    <ol>
+                        <li>Определяем глубину цвета: 2⁸ < 283 < 2⁹ ⇒ i = 9 бит</li>
+                        <li>Вычисляем количество пикселей: P = 120 × 60 = 7200</li>
+                        <li>Вычисляем объем: I = 7200 × 9 = 64800 бит = 8100 байт</li>
+                    </ol>
+                    
+                    <p><strong>Ответ:</strong> 8100</p>
+                </div>
+                
+                <!-- Задание 8 -->
+                <div class="task-detail-card" id="task8">
+                    <h3><span class="task-number">8</span> Задание №8: Комбинаторика</h3>
+                    
+                    <p><strong>Основные формулы комбинаторики:</strong></p>
+                    
+                    <table>
+                        <tr>
+                            <th>Тип</th>
+                            <th>Формула</th>
+                            <th>Описание</th>
+                        </tr>
+                        <tr>
+                            <td>Размещения с повторениями</td>
+                            <td>A_n^k = n^k</td>
+                            <td>Каждый элемент может участвовать многократно</td>
+                        </tr>
+                        <tr>
+                            <td>Размещения без повторений</td>
+                            <td>A_n^k = n!/(n-k)!</td>
+                            <td>Каждый элемент используется только один раз</td>
+                        </tr>
+                        <tr>
+                            <td>Перестановки</td>
+                            <td>P_n = n!</td>
+                            <td>Все элементы различны, порядок важен</td>
+                        </tr>
+                        <tr>
+                            <td>Сочетания</td>
+                            <td>C_n^k = n!/((n-k)!·k!)</td>
+                            <td>Все элементы различны, порядок не важен</td>
+                        </tr>
+                    </table>
+                    
+                    <p><strong>Решение через Python:</strong></p>
+                    
+                    <div class="reference-code">
+from itertools import *
+
+# Размещения с повторениями
+for x in product('ABC', repeat=3):
+    print(''.join(x))
+
+# Перестановки
+for x in permutations('ABC'):
+    print(''.join(x))
+
+# Сочетания
+for x in combinations('ABCD', 2):
+    print(''.join(x))
+                    </div>
+                    
+                    <div class="highlight">
+                        <p><strong>Пример из учебника:</strong> Алексей составляет пятизначные числа в восьмеричной системе счисления. Цифры могут встречаться в числе несколько раз или не встречаться совсем. Сколько различных чисел может составить Алексей?</p>
+                    </div>
+                    
+                    <p><strong>Решение:</strong></p>
+                    <ol>
+                        <li>На первое место можно поставить 7 цифр (кроме 0)</li>
+                        <li>На остальные 4 места - по 8 цифр</li>
+                        <li>Всего: 7 × 8 × 8 × 8 × 8 = 28672</li>
+                    </ol>
+                    
+                    <p><strong>Ответ:</strong> 28672</p>
+                </div>
+                
+                <!-- Задание 9 -->
+                <div class="task-detail-card" id="task9">
+                    <h3><span class="task-number">9</span> Задание №9: Анализ данных в Excel</h3>
+                    
+                    <p><strong>Основные функции Excel:</strong></p>
+                    
+                    <table>
+                        <tr>
+                            <th>Функция</th>
+                            <th>Описание</th>
+                            <th>Пример</th>
+                        </tr>
+                        <tr>
+                            <td>СУММ()</td>
+                            <td>Суммирует числа в диапазоне</td>
+                            <td>=СУММ(A1:A10)</td>
+                        </tr>
+                        <tr>
+                            <td>СЧЁТ()</td>
+                            <td>Считает количество непустых ячеек</td>
+                            <td>=СЧЁТ(A1:A10)</td>
+                        </tr>
+                        <tr>
+                            <td>СРЗНАЧ()</td>
+                            <td>Считает среднее арифметическое</td>
+                            <td>=СРЗНАЧ(A1:A10)</td>
+                        </tr>
+                        <tr>
+                            <td>МАКС()</td>
+                            <td>Возвращает максимальное значение</td>
+                            <td>=МАКС(A1:A10)</td>
+                        </tr>
+                        <tr>
+                            <td>МИН()</td>
+                            <td>Возвращает минимальное значение</td>
+                            <td>=МИН(A1:A10)</td>
+                        </tr>
+                        <tr>
+                            <td>ЕСЛИ()</td>
+                            <td>Проверяет условие</td>
+                            <td>=ЕСЛИ(A1>5; "Да"; "Нет")</td>
+                        </tr>
+                        <tr>
+                            <td>СЧЁТЕСЛИ()</td>
+                            <td>Считает ячейки по условию</td>
+                            <td>=СЧЁТЕСЛИ(A1:A10; ">5")</td>
+                        </tr>
+                        <tr>
+                            <td>СУММЕСЛИ()</td>
+                            <td>Суммирует значения по условию</td>
+                            <td>=СУММЕСЛИ(A1:A10; ">5"; B1:B10)</td>
+                        </tr>
+                    </table>
+                    
+                    <div class="highlight">
+                        <p><strong>Пример из учебника:</strong> Откройте файл электронной таблицы, содержащей в каждой строке четыре натуральных числа. Определите количество строк таблиции, содержащих числа, для которых выполнены оба условия: наибольшее из четырех чисел меньше суммы трех других; среди четырех чисел совпадают ровно два.</p>
+                    </div>
+                    
+                    <p><strong>Решение:</strong></p>
+                    <ol>
+                        <li>Используем функцию НАИБОЛЬШИЙ() для нахождения максимального числа</li>
+                        <li>Проверяем условие: F1 < (G1+H1+I1)</li>
+                        <li>Проверяем, что есть ровно одна пара одинаковых чисел</li>
+                        <li>Считаем количество строк, удовлетворяющих обоим условиям</li>
+                    </ol>
+                    
+                    <p><strong>Ответ:</strong> 24</p>
+                </div>
+                
+                <!-- Задание 10 -->
+                <div class="task-detail-card" id="task10">
+                    <h3><span class="task-number">10</span> Задание №10: Поиск слов в тексте</h3>
+                    
+                    <p><strong>Основные понятия:</strong></p>
+                    <ul>
+                        <li><strong>Текстовый редактор</strong> - программа для создания и редактирования текстов</li>
+                        <li><strong>Сноска</strong> - примечание к тексту, помещаемое в нижней части страницы</li>
+                        <li><strong>Поиск слов</strong> - функция поиска в текстовых редакторах (Ctrl+H)</li>
+                    </ul>
+                    
+                    <p><strong>Поиск в Microsoft Word:</strong></p>
+                    <ol>
+                        <li>Нажимаем Ctrl+H</li>
+                        <li>Вводим слово в строку поиска</li>
+                        <li>Выбираем галочки: "Учитывать регистр" и "Только слово целиком"</li>
+                        <li>Выбираем "Область поиска" → "Основной документ" для исключения сносок</li>
+                    </ol>
+                    
+                    <p><strong>Поиск в LibreOffice Writer:</strong></p>
+                    <ol>
+                        <li>Нажимаем Ctrl+H</li>
+                        <li>Вводим слово в строку поиска</li>
+                        <li>Выбираем галочки: "Учитывать регистр" и "Слова целиком"</li>
+                        <li>Вручную проверяем каждое слово, чтобы исключить сноски</li>
+                    </ol>
+                    
+                    <div class="highlight">
+                        <p><strong>Пример из учебника:</strong> С помощью текстового редактора определите, сколько раз, не считая сносок, встречается слово «Было» (с заглавной буквы) в тексте книги Ф.М. Достоевского «Идиот». Другие формы слова учитывать не следует.</p>
+                    </div>
+                    
+                    <p><strong>Решение:</strong></p>
+                    <ol>
+                        <li>Открываем файл в текстовом редакторе</li>
+                        <li>Выполняем поиск с учетом регистра и только целых слов</li>
+                        <li>Исключаем сноски из области поиска</li>
+                        <li>Подсчитываем количество вхождений</li>
+                    </ol>
+                    
+                    <p><strong>Ответ:</strong> 13</p>
+                    
+                    <p><strong>Программное решение на Python:</strong></p>
+                    
+                    <div class="reference-code">
+from string import punctuation
+
+f = open('text.txt') # Читаем текст из файла
+text = f.read()
+for symbol in punctuation: # Заменяем знаки препинания на пробелы
+    text = text.replace(symbol, ' ')
+words = text.split() # Разделяем текст на слова
+count = 0 # Считаем вхождения слова "пример"
+for word in words:
+    if word == 'пример': count += 1
+print(count)
+                    </div>
+                </div>
+                
+                <!-- Задание 11 -->
+                <div class="task-detail-card" id="task11">
+                    <h3><span class="task-number">11</span> Задание №11: Кодирование информации</h3>
+                    
+                    <p><strong>Основные понятия:</strong></p>
+                    <ul>
+                        <li><strong>Бит</strong> - наименьшая единица информации (0 или 1)</li>
+                        <li><strong>Байт</strong> - 8 бит, кодирует один символ</li>
+                        <li><strong>Мощность алфавита</strong> - количество символов в алфавите</li>
+                        <li><strong>Информационный объем</strong> - количество бит для хранения информации</li>
+                    </ul>
+                    
+                    <p><strong>Формулы:</strong></p>
+                    <ul>
+                        <li>N = 2^i (мощность алфавита)</li>
+                        <li>I = K * i (информационный объем текста)</li>
+                        <li>K = (I + Iextra) * n (общий вес всех паролей)</li>
+                    </ul>
+                    
+                    <p><strong>Алгоритм решения:</strong></p>
+                    <ol>
+                        <li>Определяем мощность алфавита N</li>
+                        <li>Находим количество бит на символ: i = ⌈log₂N⌉</li>
+                        <li>Находим количество бит на пароль: V = i * k</li>
+                        <li>Переводим в байты (округляем вверх)</li>
+                        <li>Учитываем дополнительную информацию</li>
+                        <li>Находим общий вес всех паролей</li>
+                    </ol>
+                    
+                    <div class="highlight">
+                        <p><strong>Пример из учебника:</strong> При регистрации в компьютерной системе каждому пользователю выдается пароль, состоящий из 11 символов. В качестве символов используют прописные и строчные буквы латинского алфавита (в нем 26 символов), а также десятичные цифры. В базе данных для хранения сведений о каждом пользователе отведено одинаковое и минимально возможное целое число байт. При этом используют посимвольное кодирование паролей, все символы кодируют одинаковым и минимально возможным количеством бит. Кроме собственно пароля, для каждого пользователя в системе хранятся дополнительные сведения, для чего выделено 13 байт на одного пользователя. В компьютерной системе выделен 1 Кбайт для хранения сведений о пользователях. О каком наибольшем количестве пользователей может быть сохранена информация в системе?</p>
+                    </div>
+                    
+                    <p><strong>Решение:</strong></p>
+                    <ol>
+                        <li>Мощность алфавита: N = 26 + 26 + 10 = 62</li>
+                        <li>Бит на символ: 2^5 ≤ 62 ≤ 2^6 ⇒ i = 6 бит</li>
+                        <li>Бит на пароль: 11 * 6 = 66 бит</li>
+                        <li>Байт на пароль: 66/8 = 9 байт (округляем вверх)</li>
+                        <li>Байт на пользователя: 9 + 13 = 22 байта</li>
+                        <li>Количество пользователей: 1024 / 22 = 46 (округляем вниз)</li>
+                    </ol>
+                    
+                    <p><strong>Ответ:</strong> 46</p>
+                </div>
+                
+                <!-- Задание 12 -->
+                <div class="task-detail-card" id="task12">
+                    <h3><span class="task-number">12</span> Задание №12: Исполнители Редактор и Чертежник</h3>
+                    
+                    <p><strong>Исполнитель Редактор:</strong></p>
+                    <ul>
+                        <li><strong>заменить(v, w)</strong> - заменяет первое слева вхождение цепочки v на w</li>
+                        <li><strong>нашлось(v)</strong> - проверяет, встречается ли цепочка v в строке</li>
+                        <li><strong>ПОКА условие</strong> - цикл выполняется, пока условие истинно</li>
+                        <li><strong>ЕСЛИ условие</strong> - выполняется, если условие истинно</li>
+                    </ul>
+                    
+                    <p><strong>Исполнитель Чертежник:</strong></p>
+                    <ul>
+                        <li><strong>Сместиться на (a, b)</strong> - перемещает Чертежника на (x+a, y+b)</li>
+                        <li><strong>ПОВТОРИ N РАЗ</strong> - повторяет команды N раз</li>
+                    </ul>
+                    
+                    <div class="highlight">
+                        <p><strong>Пример из учебника (Редактор):</strong> Дана программа для исполнителя Редактор: НАЧАЛО ПОКА нашлось (777777) ЕСЛИ нашлось (444) ТО заменить (444,7) ИНАЧЕ ЕСЛИ нашлось (777) ТО заменить (777,4) КОНЕЦ ПОКА КОНЕЦ. Какая строка получится в результате применения программы к строке, состоящей из 92 идущих подряд цифр 7?</p>
+                    </div>
+                    
+                    <p><strong>Решение:</strong></p>
+                    <ol>
+                        <li>Анализируем алгоритм: программа меняет 444 на 7 и 777 на 4</li>
+                        <li>Замечаем циклическую закономерность: из каждых 9 символов 7 остается 1</li>
+                        <li>92 : 8 = 11 (остаток 4)</li>
+                        <li>После 11 циклов остается 12 символов 7: 777, 777, 777, 777</li>
+                        <li>Программа заменит третью тройку 7 и получит 444777</li>
+                    </ol>
+                    
+                    <p><strong>Ответ:</strong> 444777</p>
+                    
+                    <div class="highlight">
+                        <p><strong>Пример из учебника (Чертежник):</strong> Исполнитель Чертежник перемещается на координатной плоскости. Чертежнику был дан для исполнения следующий алгоритм: НАЧАЛО Сместиться на (4, 6) ПОВТОРИ N РАЗ Сместиться на (a, b) Сместиться на (4, -6) КОНЕЦ ПОВТОРИ Сместиться на (-28, -22) КОНЕЦ. В результате выполнения этого алгоритма Чертежник возвращается в исходную точку. Какое наибольшее число повторений могло быть указано в конструкции «Повтори N раз»?</p>
+                    </div>
+                    
+                    <p><strong>Решение:</strong></p>
+                    <ol>
+                        <li>Записываем изменения координат:
+                            <ul>
+                                <li>Δx = 4 + N*(a+4) - 28</li>
+                                <li>Δy = 6 + N*(b-6) - 22</li>
+                            </ul>
+                        </li>
+                        <li>Так как Чертежник возвращается в исходную точку, Δx = 0 и Δy = 0</li>
+                        <li>Получаем систему:
+                            <ul>
+                                <li>N*(a+4) = 24</li>
+                                <li>N*(b-6) = 16</li>
+                            </ul>
+                        </li>
+                        <li>Находим НОД(24, 16) = 8</li>
+                    </ol>
+                    
+                    <p><strong>Ответ:</strong> 8</p>
+                </div>
+                
+                <!-- Задание 13 -->
+                <div class="task-detail-card" id="task13">
+                    <h3><span class="task-number">13</span> Задание №13: IP-адреса и сети</h3>
+                    
+                    <p><strong>Основные понятия:</strong></p>
+                    <ul>
+                        <li><strong>IP-адрес</strong> - уникальный адрес устройства в сети, состоит из 4 байт</li>
+                        <li><strong>Маска сети</strong> - определяет, какая часть IP-адреса относится к сети, а какая - к узлу</li>
+                        <li><strong>Адрес сети</strong> - получается поразрядной конъюнкцией IP-адреса и маски</li>
+                        <li><strong>Широковещательный адрес</strong> - адрес для отправки сообщений всем узлам сети</li>
+                    </ul>
+                    
+                    <p><strong>Модуль ipaddress в Python:</strong></p>
+                    
+                    <div class="reference-code">
+from ipaddress import *
+
+# Создание объекта IP-адреса
+ip = ip_address('192.168.1.1')
+
+# Создание объекта сети
+net = ip_network('192.168.1.0/24')
+
+# Перевод в двоичную систему
+bin_ip = bin(int(ip))[2:].zfill(32)
+
+# Проверка принадлежности IP-адреса сети
+if ip_address('192.168.1.5') in ip_network('192.168.1.0/24'):
+    print('Принадлежит')
+
+# Получение адреса сети и широковещательного адреса
+print(net.network_address)
+print(net.broadcast_address)
+
+# Получение количества адресов в сети
+print(net.num_addresses)
+                    </div>
+                    
+                    <div class="highlight">
+                        <p><strong>Пример из учебника:</strong> Для узла с IP-адресом 145.67.184.122 адрес сети равен 145.67.160.0. Чему равен третий слева байт маски? Ответ запишите в виде десятичного числа.</p>
+                    </div>
+                    
+                    <p><strong>Решение:</strong></p>
+                    <ol>
+                        <li>Переводим третий байт IP-адреса и адреса сети в двоичную систему:
+                            <ul>
+                                <li>184₁₀ = 10111000₂</li>
+                                <li>160₁₀ = 10100000₂</li>
+                            </ul>
+                        </li>
+                        <li>Находим маску поразрядной конъюнкцией: 11100000₂</li>
+                        <li>Переводим в десятичную систему: 11100000₂ = 224₁₀</li>
+                    </ol>
+                    
+                    <p><strong>Ответ:</strong> 224</p>
+                </div>
+                
+                <!-- Задание 14 -->
+                <div class="task-detail-card" id="task14">
+                    <h3><span class="task-number">14</span> Задание №14: Системы счисления</h3>
+                    
+                    <p><strong>Основные понятия:</strong></p>
+                    <ul>
+                        <li><strong>Система счисления</strong> - способ записи чисел с помощью символов</li>
+                        <li><strong>Основание системы</strong> - количество цифр в системе счисления</li>
+                        <li><strong>Позиционная система</strong> - значение цифры зависит от ее позиции в числе</li>
+                        <li><strong>Непозиционная система</strong> - значение цифры не зависит от позиции</li>
+                    </ul>
+                    
+                    <p><strong>Алгоритм перевода из 10-й системы в любую другую:</strong></p>
+                    <ol>
+                        <li>Делим исходное число на основание новой системы</li>
+                        <li>Остаток от деления - новая цифра числа</li>
+                        <li>Целую часть снова делим на основание</li>
+                        <li>Повторяем, пока целая часть не станет равна 0</li>
+                        <li>Полученные цифры читаем в обратном порядке</li>
+                    </ol>
+                    
+                    <p><strong>Программная реализация на Python:</strong></p>
+                    
+                    <div class="reference-code">
+# Перевод из 10-й системы в 9-ю
+x = 675
+s = ''
+while x > 0:
+    s = str(x % 9) + s
+    x //= 9
+print(s)  # Вывод: 830
+
+# Перевод из любой системы в 10-ю с помощью int()
+x = '830'
+res = int(x, 9)  # из 9-чной в 10-чную
+print(res)  # Вывод: 675
+
+# Ручной перевод из любой системы в 10-ю
+x = '830'
+base = 9
+res = 8*9**2 + 3*9**1 + 0*9**0
+print(res)  # Вывод: 675
+                    </div>
+                    
+                    <div class="highlight">
+                        <p><strong>Пример из учебника:</strong> Значение арифметического выражения: 8¹²²² + 4³²⁰ - 2¹⁶ + 76 записали в системе счисления с основанием 2. Сколько цифр «1» содержится в этой записи?</p>
+                    </div>
+                    
+                    <p><strong>Решение:</strong></p>
+                    <ol>
+                        <li>Подготовительный этап:
+                            <ul>
+                                <li>76₁₀ = 1001100₂</li>
+                                <li>4³²⁰ = 2⁶⁴⁰ = 1000...000₂ (640 нулей)</li>
+                                <li>8¹²²² = 2³⁶⁶⁶ = 1000...000₂ (3666 нулей)</li>
+                                <li>2¹⁶ = 1000...000₂ (16 нулей)</li>
+                            </ul>
+                        </li>
+                        <li>Выполняем вычитание: 2⁶⁴⁰ - 2¹⁶ = 111...111000...000₂ (624 единицы, 16 нулей)</li>
+                        <li>Выполняем сложение с 76: получаем 111...111000...0001001100₂ (624 единицы, 9 нулей, 1001100)</li>
+                        <li>Выполняем сложение с 8¹²²²: получаем 1000...000111...1111001100₂ (3026 нулей, 624 единицы, 1001100)</li>
+                        <li>Считаем единицы: 1 + 624 + 3 = 628</li>
+                    </ol>
+                    
+                    <p><strong>Ответ:</strong> 628</p>
+                </div>
+                
+                <!-- Задание 15 -->
+                <div class="task-detail-card" id="task15">
+                    <h3><span class="task-number">15</span> Задание №15: Логические выражения</h3>
+                    
+                    <p><strong>Логические операции в Python:</strong></p>
+                    
+                    <table>
+                        <tr>
+                            <th>Операция</th>
+                            <th>Математическое обозначение</th>
+                            <th>Обозначение в Python</th>
+                        </tr>
+                        <tr>
+                            <td>Конъюнкция</td>
+                            <td>x ∧ y</td>
+                            <td>x and y</td>
+                        </tr>
+                        <tr>
+                            <td>Дизъюнкция</td>
+                            <td>x ∨ y</td>
+                            <td>x or y</td>
+                        </tr>
+                        <tr>
+                            <td>Отрицание</td>
+                            <td>¬x</td>
+                            <td>not x</td>
+                        </tr>
+                        <tr>
+                            <td>Эквивалентность</td>
+                            <td>x ≡ y</td>
+                            <td>x == y</td>
+                        </tr>
+                        <tr>
+                            <td>Импликация</td>
+                            <td>x → y</td>
+                            <td>x <= y</td>
+                        </tr>
+                    </table>
+                    
+                    <p><strong>Законы алгебры логики:</strong></p>
+                    <ul>
+                        <li>Закон поглощения: x ∨ (x ∧ y) = x, x ∧ (x ∨ y) = x</li>
+                        <li>Закон де Моргана: ¬(x ∨ y) = ¬x ∧ ¬y, ¬(x ∧ y) = ¬x ∨ ¬y</li>
+                        <li>Дистрибутивный закон: x ∧ (y ∨ z) = (x ∧ y) ∨ (x ∧ z)</li>
+                        <li>Закон склеивания: (x ∧ y) ∨ (x ∧ ¬y) = x</li>
+                    </ul>
+                    
+                    <div class="highlight">
+                        <p><strong>Пример из учебника:</strong> Обозначим через ДЕЛ(n, m) утверждение «натуральное число n делится без остатка на натуральное число m». Для какого наибольшего натурального числа A логическое выражение ¬ДЕЛ(x, A) → (ДЕЛ(x, 28) → ¬ДЕЛ(x, 49)) истинно при любом натуральном значении переменной x?</p>
+                    </div>
+                    
+                    <p><strong>Решение:</strong></p>
+                    <ol>
+                        <li>Записываем выражение: ¬A → (28 → ¬49)</li>
+                        <li>Раскрываем импликацию: A ∨ (¬28 ∨ ¬49)</li>
+                        <li>Упрощаем: A ∨ ¬28 ∨ ¬49</li>
+                        <li>Выражение должно быть истинно при любом x</li>
+                        <li>Находим, когда ¬28 ∨ ¬49 = 0: 28 ∧ 49 = 1</li>
+                        <li>Наименьшее общее кратное 28 и 49: НОК(28, 49) = 196</li>
+                    </ol>
+                    
+                    <p><strong>Ответ:</strong> 196</p>
+                    
+                    <p><strong>Программное решение:</strong></p>
+                    
+                    <div class="reference-code">
+for a in range(1, 10000):
+    f = True
+    for x in range(1, 100000):
+        if ((x % a == 0) or ((x % 28 != 0) or (x % 49 != 0))) == False:
+            f = False
+            break
+    if f:
+        print(a)
+        break
+                    </div>
+                </div>
+                
+                <!-- Задание 16 -->
+                <div class="task-detail-card" id="task16">
+                    <h3><span class="task-number">16</span> Задание №16: Рекурсия</h3>
+                    
+                    <p><strong>Основные понятия:</strong></p>
+                    <ul>
+                        <li><strong>Рекурсия</strong> - вызов функцией самой себя</li>
+                        <li><strong>Базовый случай</strong> - условие выхода из рекурсии</li>
+                        <li><strong>Рекуррентное соотношение</strong> - формула, выражающая значение функции через предыдущие значения</li>
+                        <li><strong>Динамическое программирование</strong> - метод решения задач путем разбиения на подзадачи</li>
+                    </ul>
+                    
+                    <p><strong>Пример рекурсивной функции:</strong></p>
+                    
+                    <div class="reference-code">
+def F(n):
+    if n <= 2:
+        return 1
+    else:
+        return F(n-1) + F(n-2)
+
+print(F(5))  # Вывод: 5
+                    </div>
+                    
+                    <p><strong>Решение динамическим программированием:</strong></p>
+                    
+                    <div class="reference-code">
+f = [0] * 50
+f[1] = 1
+f[2] = 1
+for n in range(3, 6):
+    f[n] = f[n-1] + f[n-2]
+print(f[5])  # Вывод: 5
+                    </div>
+                    
+                    <p><strong>Декоратор lru_cache для оптимизации рекурсии:</strong></p>
+                    
+                    <div class="reference-code">
+from functools import lru_cache
+
+@lru_cache(maxsize=None)
+def F(n):
+    if n <= 2:
+        return 1
+    else:
+        return F(n-1) + F(n-2)
+
+print(F(5))  # Вывод: 5
+                    </div>
+                    
+                    <div class="highlight">
+                        <p><strong>Пример из учебника:</strong> Алгоритм вычисления значения функции F(n), где n — натуральное число, задан следующими соотношениями: F(1) = 1, F(n) = 3 * n * F(n-1), если n > 1. Чему равно значение выражения (F(2024)/6 + F(2023))/F(2022)?</p>
+                    </div>
+                    
+                    <p><strong>Решение:</strong></p>
+                    <ol>
+                        <li>Находим общую формулу: F(n) = 3^(n-1) * n!</li>
+                        <li>Вычисляем:
+                            <ul>
+                                <li>F(2024) = 3²⁰²³ * 2024!</li>
+                                <li>F(2023) = 3²⁰²² * 2023!</li>
+                                <li>F(2022) = 3²⁰²¹ * 2022!</li>
+                            </ul>
+                        </li>
+                        <li>Подставляем в выражение:
+                            <ul>
+                                <li>(F(2024)/6 + F(2023))/F(2022) = (3²⁰²³ * 2024!/6 + 3²⁰²² * 2023!)/(3²⁰²¹ * 2022!)</li>
+                                <li>= 3² * 2023 * 1013 = 9 * 2023 * 1013</li>
+                                <li>= 9 * 2049299 = 18443691</li>
+                            </ul>
+                        </li>
+                    </ol>
+                    
+                    <p><strong>Ответ:</strong> 18443691</p>
+                </div>
+                
+                <!-- Задание 17 -->
+                <div class="task-detail-card" id="task17">
+                    <h3><span class="task-number">17</span> Задание №17: Работа с файлами</h3>
+                    
+                    <p><strong>Основные понятия:</strong></p>
+                    <ul>
+                        <li><strong>Открытие файла</strong> - функция open() с режимами чтения ('r'), записи ('w'), дозаписи ('a')</li>
+                        <li><strong>Чтение файла</strong> - методы read(), readline(), или итерация по строкам</li>
+                        <li><strong>Закрытие файла</strong> - метод close() или использование контекстного менеджера with</li>
+                        <li><strong>Последовательности чисел</strong> - обработка числовых данных из файлов</li>
+                    </ul>
+                    
+                    <p><strong>Примеры работы с файлами в Python:</strong></p>
+                    
+                    <div class="reference-code">
+# Способ 1: Функция open() с закрытием
+f = open('17-1.txt', 'r', encoding='utf-8')
+data = f.read()
+f.close()
+
+# Способ 2: Контекстный менеджер (рекомендуется)
+with open('17-1.txt', 'r', encoding='utf-8') as f:
+    data = f.read()
+
+# Чтение чисел из файла в список
+with open('17-1.txt') as f:
+    numbers = [int(line) for line in f]
+                    </div>
+                    
+                    <p><strong>Основные типы задач:</strong></p>
+                    <ol>
+                        <li><strong>Пары последовательных чисел</strong> - поиск пар, удовлетворяющих условиям</li>
+                        <li><strong>Тройки последовательных чисел</strong> - анализ троек подряд идущих чисел</li>
+                        <li><strong>Пары различных чисел</strong> - все возможные пары из последовательности</li>
+                        <li><strong>n-ки чисел</strong> - анализ групп из n чисел</li>
+                    </ol>
+                    
+                    <div class="highlight">
+                        <p><strong>Пример из учебника:</strong> В файле 17-1.txt содержится последовательность целых чисел. Элементы последовательности могут принимать целые значения от –10000 до 10000 включительно. Определите количество пар, в которых хотя бы один из двух элементов делится на 7, а их сумма делится на 5. В ответе запишите два числа: сначала количество найденных пар, а затем – максимальную сумму элементов таких пар.</p>
+                    </div>
+                    
+                    <p><strong>Решение на Python:</strong></p>
+                    
+                    <div class="reference-code">
+with open('17-1.txt') as f:
+    a = [int(i) for i in f]
+
+c = 0  # Счетчик пар
+mx = -10000000000000000000  # Максимальная сумма
+
+for i in range(len(a)-1):
+    if ((a[i] % 7 == 0) or (a[i+1] % 7 == 0)) and ((a[i] + a[i+1]) % 5 == 0):
+        c += 1
+        if a[i] + a[i+1] > mx:
+            mx = a[i] + a[i+1]
+
+print(c, mx)
+                    </div>
+                    
+                    <p><strong>Ответ:</strong> 383 18505</p>
+                    
+                    <p><strong>Дополнительные примеры:</strong></p>
+                    <ul>
+                        <li><strong>Задача 2:</strong> Минимальная сумма пар с условиями - ответ: 171 5819</li>
+                        <li><strong>Задача 3:</strong> Максимальная сумма квадратов пар - ответ: 687 985865</li>
+                        <li><strong>Задача 4:</strong> Пары с совпадающими цифрами - ответ: 296 182211705</li>
+                    </ul>
+                </div>
+                
+                <!-- Задание 18 -->
+                <div class="task-detail-card" id="task18">
+                    <h3><span class="task-number">18</span> Задание №18: Электронные таблицы</h3>
+                    
+                    <p><strong>Основные понятия:</strong></p>
+                    <ul>
+                        <li><strong>Формулы Excel</strong> - начинаются со знака =, могут содержать функции и ссылки на ячейки</li>
+                        <li><strong>Динамическое программирование</strong> - метод решения задач разбиением на подзадачи</li>
+                        <li><strong>Робот на поле</strong> - задачи на поиск максимального/минимального пути</li>
+                        <li><strong>Условия и ограничения</strong> - задачи с дополнительными правилами (четность, стены и т.д.)</li>
+                    </ul>
+                    
+                    <p><strong>Основные функции Excel для задания 18:</strong></p>
+                    
+                    <table>
+                        <tr>
+                            <th>Функция</th>
+                            <th>Описание</th>
+                            <th>Пример</th>
+                        </tr>
+                        <tr>
+                            <td>МАКС()</td>
+                            <td>Находит максимальное значение</td>
+                            <td>=МАКС(A1:A10)</td>
+                        </tr>
+                        <tr>
+                            <td>МИН()</td>
+                            <td>Находит минимальное значение</td>
+                            <td>=МИН(A1:A10)</td>
+                        </tr>
+                        <tr>
+                            <td>ЕСЛИ()</td>
+                            <td>Проверяет условие</td>
+                            <td>=ЕСЛИ(A1>5; 1; 0)</td>
+                        </tr>
+                        <tr>
+                            <td>ОСТАТ()</td>
+                            <td>Возвращает остаток от деления</td>
+                            <td>=ОСТАТ(A1; 2)</td>
+                        </tr>
+                        <tr>
+                            <td>СЦЕПИТЬ()</td>
+                            <td>Объединяет текстовые строки</td>
+                            <td>=СЦЕПИТЬ(A1; B1)</td>
+                        </tr>
+                    </table>
+                    
+                    <p><strong>Типовые прототипы задач:</strong></p>
+                    <ol>
+                        <li><strong>Стандартный прототип</strong> - Робот собирает монеты, двигаясь только вправо и вниз</li>
+                        <li><strong>Прототип с условием</strong> - Робот не собирает монеты из клеток с четным количеством</li>
+                        <li><strong>Прототип со стенами</strong> - На поле есть препятствия, через которые нельзя проходить</li>
+                        <li><strong>Нестандартные прототипы</strong> - Ладья, Змейка и другие вариации</li>
+                    </ol>
+                    
+                    <div class="highlight">
+                        <p><strong>Пример из учебника:</strong> Квадрат разлинован на N×N клеток. Исполнитель Робот может перемещаться по клеткам, выполняя за одно перемещение одну из двух команд: вправо или вниз. В каждой клетке квадрата лежит монета достоинством от 1 до 300. Определите максимальную и минимальную денежную сумму, которую может собрать Робот, пройдя из левой верхней клетки в правую нижнюю.</p>
+                    </div>
+                    
+                    <p><strong>Решение в Excel:</strong></p>
+                    <ol>
+                        <li>Создаем копию исходного поля справа или снизу</li>
+                        <li>В начальной ячейке копируем значение из исходного поля</li>
+                        <li>Для первой строки: =ячейка_слева + исходное_значение</li>
+                        <li>Для первого столбца: =ячейка_сверху + исходное_значение</li>
+                        <li>Для остальных ячеек: =МАКС(ячейка_слева; ячейка_сверху) + исходное_значение</li>
+                        <li>Для минимальной суммы заменяем МАКС() на МИН()</li>
+                    </ol>
+                    
+                    <p><strong>Пример формулы:</strong></p>
+                    <div class="reference-code">
+=МАКС(A2; B1) + B2
+                    </div>
+                    
+                    <p><strong>Ответ для примера:</strong> 208117 (максимальная и минимальная суммы)</p>
+                    
+                    <p><strong>Варианты с условиями:</strong></p>
+                    <ul>
+                        <li><strong>Четные монеты не собираются:</strong> =МАКС(A2; B1) + ЕСЛИ(ОСТАТ(B2;2)=0; 0; B2)</li>
+                        <li><strong>Запрещенные клетки:</strong> =МАКС(A2; B1) + ЕСЛИ(ОСТАТ(B2;2)=0; -999999; B2)</li>
+                        <li><strong>Со стенами:</strong> Использовать формулы только из одной стороны</li>
+                    </ul>
+                </div>
+                
+                <!-- Задание 19-21 -->
+                <div class="task-detail-card" id="task19">
+                    <h3><span class="task-number">19-21</span> Задание №19-21: Теория игр</h3>
+                    
+                    <p><strong>Основные понятия теории игр:</strong></p>
+                    <ul>
+                        <li><strong>Игроки</strong> - участники игры, принимающие решения (Петя и Ваня)</li>
+                        <li><strong>Стратегии</strong> - набор возможных действий игрока</li>
+                        <li><strong>Удачный ход</strong> - ход, ведущий к победе при оптимальной игре</li>
+                        <li><strong>Неудачный ход</strong> - ход, ведущий к проигрышу при оптимальной игре противника</li>
+                        <li><strong>Зона выигрыша</strong> - позиции, из которых можно выиграть</li>
+                        <li><strong>Зона проигрыша</strong> - позиции, из которых противник может выиграть</li>
+                    </ul>
+                    
+                    <p><strong>Основные типы задач:</strong></p>
+                    <ol>
+                        <li><strong>Задача на одну кучу камней</strong> - один игрок, две операции (обычно +a и *b)</li>
+                        <li><strong>Задача на одну кучу с неудачным ходом</strong> - учитываются специальные условия</li>
+                        <li><strong>Задача на две кучи камней</strong> - две независимые кучи, операции применяются к любой</li>
+                    </ol>
+                    
+                    <div class="highlight">
+                        <p><strong>Пример из учебника (задача на одну кучу):</strong> Перед Петей и Ваней лежит куча камней. Игроки по очереди совершают ходы. Первый начинает Петя. Игрокам доступны ходы: увеличить количество камней на 2 или умножить на 2. Выигрывает тот, кто первый достигнет значения камней в куче больше 11. Определите, при каких начальных значениях Петя может выиграть первым ходом, а при каких - Ваня.</p>
+                    </div>
+                    
+                    <p><strong>Решение "вручную":</strong></p>
+                    <ol>
+                        <li>Определяем зону проигрыша (выигрыш за 1 ход): значения 6-11</li>
+                        <li>Находим зону выигрыша Вани (выигрыш за 2 хода): значения 4-5</li>
+                        <li>Находим зону выигрыша Пети (выигрыш за 3 хода): значения 1-3</li>
+                    </ol>
+                    
+                    <p><strong>Программное решение на Python:</strong></p>
+                    
+                    <div class="reference-code">
+from functools import lru_cache
+
+@lru_cache(None)
+def f(a):
+    if a >= 12:  # Условие выигрыша
+        return 0
+    moves = [f(a+2), f(a*2)]  # Все возможные ходы
+    win_moves = [i for i in moves if i <= 0]  # Выигрышные ходы для текущего игрока
+    
+    if win_moves:
+        return -max(win_moves) + 1
+    else:
+        return -max(moves)
+
+# Поиск начальных значений для выигрыша Пети первым ходом
+for i in range(1, 12):
+    if f(i) == 1:
+        print(f"Петя выигрывает первым ходом при S = {i}")
+
+# Поиск начальных значений для выигрыша Вани первым ходом
+for i in range(1, 12):
+    if f(i) == -1:
+        print(f"Ваня выигрывает первым ходом при S = {i}")
+                    </div>
+                    
+                    <p><strong>Особенности разных задач:</strong></p>
+                    <ul>
+                        <li><strong>Задача 19:</strong> Обычно требуется найти минимальное S для выигрыша Вани</li>
+                        <li><strong>Задача 20:</strong> Обычно требуется найти S для выигрыша Пети вторым ходом</li>
+                        <li><strong>Задача 21:</strong> Обычно требуется найти S, при котором Ваня выигрывает вторым ходом</li>
+                    </ul>
+                    
+                    <p><strong>Примеры ответов:</strong></p>
+                    <ul>
+                        <li><strong>Задача 19:</strong> Минимальное S = 14</li>
+                        <li><strong>Задача 20:</strong> Минимальное S = 5</li>
+                        <li><strong>Задача 21:</strong> Максимальное S = 11</li>
+                    </ul>
+                    
+                    <p><strong>Решение задачи на две кучи:</strong></p>
+                    
+                    <div class="reference-code">
+from functools import lru_cache
+
+@lru_cache(None)
+def f(a, b):
+    if a + b >= 20:  # Условие выигрыша
+        return 0
+    # Все возможные ходы для двух куч
+    moves = [f(a+2, b), f(a+3, b), f(a, b+2), f(a, b+3)]
+    win_moves = [i for i in moves if i <= 0]
+    
+    if win_moves:
+        return -max(win_moves) + 1
+    else:
+        return -max(moves)
+
+# Пример: первая куча = 13 камней, ищем S для второй кучи
+for s in range(1, 20):
+    if f(13, s) == 1:
+        print(f"Петя выигрывает первым ходом при S = {s}")
+        break
+                    </div>
+                    
+                    <p><strong>Советы по решению:</strong></p>
+                    <ol>
+                        <li>Всегда сначала решайте задачу "вручную" для понимания логики</li>
+                        <li>Используйте кэширование (@lru_cache) для ускорения программы</li>
+                        <li>Внимательно читайте условие - операции могут быть разными</li>
+                        <li>Для задач с неудачными ходами меняйте логику выбора хода</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Секция справочных материалов -->
+    <section class="reference" id="reference">
+        <div class="container">
+            <div class="section-title">
+                <h2>Справочные материалы</h2>
+                <p>Основные понятия и формулы для решения задач ЕГЭ</p>
+            </div>
+            
+            <div class="reference-grid">
+                <div class="reference-card">
+                    <h3>Единицы измерения информации</h3>
+                    <div class="reference-code">
+1 Байт = 8 Бит
+1 Кбайт = 1024 байта
+1 Мбайт = 1024 Кбайта
+1 Гбайт = 1024 Мбайта
+1 Кбит = 1000 бит
+1 Мбит = 1000 Кбит
+
+Формулы:
+N = 2^i
+I = K * i
+
+Где:
+N - мощность алфавита
+i - информационный вес символа
+I - информационный объем
+K - количество символов
+                    </div>
+                </div>
+                
+                <div class="reference-card">
+                    <h3>Логические операции</h3>
+                    <div class="reference-code">
+Отрицание (НЕ, ¬):
+A | ¬A
+0 | 1
+1 | 0
+
+Конъюнкция (И, &, ∧):
+A B | A&B
+0 0 | 0
+0 1 | 0
+1 0 | 0
+1 1 | 1
+
+Дизъюнкция (ИЛИ, +, ∨):
+A B | A∨B
+0 0 | 0
+0 1 | 1
+1 0 | 1
+1 1 | 1
+                    </div>
+                </div>
+                
+                <div class="reference-card">
+                    <h3>Формулы комбинаторики</h3>
+                    <div class="reference-code">
+Размещения с повторениями:
+A_n^k = n^k
+
+Размещения без повторений:
+A_n^k = n!/(n-k)!
+
+Перестановки:
+P_n = n!
+
+Сочетания:
+C_n^k = n!/((n-k)!·k!)
+
+Перестановки с повторениями:
+P = n!/(n1!·n2!·...·nk!)
+                    </div>
+                </div>
+                
+                <div class="reference-card">
+                    <h3>Функции Excel</h3>
+                    <div class="reference-code">
+=СУММ(диапазон)
+=СЧЁТ(диапазон)
+=СРЗНАЧ(диапазон)
+=МАКС(диапазон)
+=МИН(диапазон)
+=ЕСЛИ(условие; значение_истина; значение_ложь)
+=СЧЁТЕСЛИ(диапазон; условие)
+=СУММЕСЛИ(диапазон; критерий)
+=ВПР(искомое_значение; таблица; номер_столбца; 0)
+                    </div>
+                </div>
+                
+                <div class="reference-card">
+                    <h3>Основы Python для ЕГЭ</h3>
+                    <div class="reference-code">
+# Системы счисления
+bin(x)[2:]  # в двоичную
+oct(x)[2:]  # в восьмеричную
+hex(x)[2:]  # в шестнадцатеричную
+int(x, y)   # в десятичную из системы y
+
+# Комбинаторика
+from itertools import *
+product('ABC', repeat=3)  # размещения с повторениями
+permutations('ABC')        # перестановки
+combinations('ABCD', 2)    # сочетания
+
+# Теория игр
+from functools import lru_cache
+@lru_cache(None)
+def f(a):
+    if a >= N: return 0
+    ...
+                    </div>
+                </div>
+                
+                <div class="reference-card">
+                    <h3>Формулы кодирования</h3>
+                    <div class="reference-code">
+Графическая информация:
+I = P * i
+P = m * n (разрешение)
+N = 2^i (количество цветов)
+
+Звуковая информация:
+I = k * i * v * t
+k - количество каналов
+i - глубина кодирования
+v - частота дискретизации
+t - время
+
+Видеоинформация:
+I = P * i * v * t + I_audio
+P - размер кадра
+v - частота кадров
+
+Передача информации:
+I = V * t
+V - скорость передачи
+t - время
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Секция статистики -->
+    <section class="stats">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <h3>21</h3>
+                    <p>Основных заданий</p>
+                </div>
+                <div class="stat-item">
+                    <h3>235</h3>
+                    <p>Минут на экзамен</p>
+                </div>
+                <div class="stat-item">
+                    <h3>29</h3>
+                    <p>Максимальный балл</p>
+                </div>
+                <div class="stat-item">
+                    <h3>6</h3>
+                    <p>Минимальный балл</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Подвал сайта -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>УЧИ.ИНФУ ЕГЭ</h3>
+                    <p>Лучшая платформа для подготовки к ЕГЭ по информатике</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Быстрые ссылки</h3>
+                    <ul style="list-style: none;">
+                        <li><a href="#" style="color: #ccc; text-decoration: none;">Главная</a></li>
+                        <li><a href="#tasks" style="color: #ccc; text-decoration: none;">Задания</a></li>
+                        <li><a href="#task-details" style="color: #ccc; text-decoration: none;">Разборы</a></li>
+                        <li><a href="#reference" style="color: #ccc; text-decoration: none;">Справочник</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Контакты</h3>
+                    <p>Email: info@uchiinfu.ru</p>
+                    <p>Телефон: 8 (800) 555-35-35</p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 УЧИ.ИНФУ ЕГЭ - Подготовка к ЕГЭ по информатике</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Функция для плавной прокрутки к заданию
+        function scrollToTask(taskId) {
+            const element = document.getElementById(taskId);
+            if (element) {
+                // Прокрутка к элементу с учетом высоты фиксированного заголовка
+                const offsetTop = element.offsetTop - 80;
+                window.scrollTo({
+                    top: offsetTop,
+                    behavior: 'smooth'
+                });
+                
+                // Добавляем визуальный эффект выделения
+                element.style.backgroundColor = '#fff9e6';
+                element.style.transition = 'background-color 0.5s';
+                
+                // Убираем выделение через 2 секунды
+                setTimeout(() => {
+                    element.style.backgroundColor = '';
+                }, 2000);
+            }
+        }
+
+        // Плавная прокрутка к якорям для навигационных ссылок
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Добавляем обработчики для быстрой навигации
+        document.querySelectorAll('.quick-nav a').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                scrollToTask(targetId.substring(1)); // Убираем # из ID
+            });
+        });
+
+        // Добавляем обработчики для номеров заданий
+        document.querySelectorAll('.task-number').forEach(number => {
+            number.addEventListener('click', function() {
+                const taskId = this.parentElement.parentElement.id || 
+                              this.closest('.task-card').querySelector('h3').textContent.match(/Задание №(\d+)/)[1];
+                scrollToTask('task' + taskId);
+            });
+        });
+    </script>
+</body>
+</html>
