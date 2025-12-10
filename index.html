@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>УЧИ ИНФУ ЕГЭ - Подготовка к ЕГЭ по информатике 2024</title>
+    <title>УЧИ ИНФУ ЕГЭ - Полная подготовка к ЕГЭ по информатике 2024</title>
     <style>
         /* Сброс стилей и базовые настройки */
         * {
@@ -365,6 +365,142 @@
             margin: 1rem 0;
         }
 
+        /* Стили для заданий 22-27 */
+        .task-continuation {
+            background-color: #f0f8ff;
+            padding: 4rem 0;
+        }
+        
+        .continuation-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .continuation-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+            cursor: pointer;
+            border: 2px solid transparent;
+        }
+        
+        .continuation-card:hover {
+            transform: translateY(-5px);
+            border-color: #667eea;
+        }
+        
+        .continuation-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #333;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .task-number-cont {
+            background: #667eea;
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .task-number-cont:hover {
+            background: #764ba2;
+            transform: scale(1.1);
+        }
+        
+        .task-content-cont {
+            max-height: 200px;
+            overflow-y: auto;
+            margin-bottom: 1rem;
+            padding: 1rem;
+            background: #f8f9fa;
+            border-radius: 5px;
+            font-family: monospace;
+            font-size: 0.9rem;
+            line-height: 1.4;
+        }
+        
+        .task-detail-cont {
+            margin-top: 3rem;
+        }
+        
+        .task-detail-cont-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            margin-bottom: 2rem;
+            border-left: 4px solid #667eea;
+            scroll-margin-top: 80px;
+        }
+        
+        .task-detail-cont-card h3 {
+            color: #333;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .code-block {
+            background: #2d3748;
+            color: #e2e8f0;
+            padding: 1.5rem;
+            border-radius: 5px;
+            font-family: 'Consolas', 'Monaco', monospace;
+            white-space: pre-wrap;
+            line-height: 1.5;
+            margin: 1rem 0;
+            overflow-x: auto;
+            font-size: 0.9rem;
+        }
+        
+        .solution-step {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 5px;
+            margin: 1rem 0;
+            border-left: 4px solid #28a745;
+        }
+        
+        .warning-note {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 5px;
+        }
+        
+        .tip-note {
+            background: #d1ecf1;
+            border-left: 4px solid #17a2b8;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 5px;
+        }
+        
+        .table-compact {
+            font-size: 0.9rem;
+            line-height: 1.4;
+        }
+        
+        .table-compact th, .table-compact td {
+            padding: 0.5rem;
+        }
+
         /* Адаптивность */
         @media (max-width: 768px) {
             .header-content {
@@ -381,7 +517,7 @@
                 margin: 0.5rem;
             }
 
-            .task-grid, .reference-grid {
+            .task-grid, .reference-grid, .continuation-grid {
                 grid-template-columns: 1fr;
             }
             
@@ -406,8 +542,8 @@
                 <nav>
                     <ul>
                         <li><a href="https://boris625.github.io/uchiinfu.github.io/">Главная</a></li>
-                        <li><a href="#tasks">Задания</a></li>
-                        <li><a href="#task-details">Разборы</a></li>
+                        <li><a href="#tasks">Задания 1-21</a></li>
+                        <li><a href="#tasks22">Задания 22-27</a></li>
                         <li><a href="#reference">Справочник</a></li>
                     </ul>
                 </nav>
@@ -419,11 +555,11 @@
     <section class="hero">
         <div class="container">
             <h1>Полная подготовка к ЕГЭ по информатике 2025</h1>
-            <p>Интерактивная платформа для эффективной подготовки к экзамену. Теория, практика и справочные материалы в одном месте. Теперь с полным набором заданий 1-21!</p>
+            <p>Интерактивная платформа для эффективной подготовки к экзамену. Теория, практика и справочные материалы в одном месте. Все задания 1-27!</p>
         </div>
     </section>
 
-    <!-- Секция заданий -->
+    <!-- Секция заданий 1-21 -->
     <section class="tasks" id="tasks">
         <div class="container">
             <div class="section-title">
@@ -805,7 +941,7 @@ IP-адрес: 4 байта
         </div>
     </section>
 
-    <!-- Секция подробных разборов заданий -->
+    <!-- Секция подробных разборов заданий 1-21 -->
     <section class="tasks" id="task-details">
         <div class="container">
             <div class="section-title">
@@ -2002,6 +2138,971 @@ for s in range(1, 20):
         </div>
     </section>
 
+    <!-- Секция заданий 22-27 -->
+    <section class="task-continuation" id="tasks22">
+        <div class="container">
+            <div class="section-title">
+                <h2>Задания ЕГЭ (22-27)</h2>
+                <p>Сложные задания второй части экзамена</p>
+            </div>
+            
+            <div class="quick-nav">
+                <a href="#task22">Задание 22</a>
+                <a href="#task23">Задание 23</a>
+                <a href="#task24">Задание 24</a>
+                <a href="#task25">Задание 25</a>
+                <a href="#task26">Задание 26</a>
+                <a href="#task27">Задание 27</a>
+            </div>
+            
+            <div class="continuation-grid">
+                <!-- Задание 22 -->
+                <div class="continuation-card">
+                    <h3><span class="task-number-cont" onclick="scrollToTaskCont('task22')">22</span> Задание №22</h3>
+                    <p>Динамическое программирование в Excel</p>
+                    <div class="task-content-cont">
+Типы задач:
+1. Процессы с зависимостями
+2. Поиск минимального времени
+3. Построение диаграммы Ганта
+4. Параллельное выполнение
+
+Основные функции:
+ВПР(), ЕСЛИ(), МАКС(), СУММ()
+                    </div>
+                    <div class="task-tags">
+                        <span class="task-tag">Excel</span>
+                        <span class="task-tag">Динамика</span>
+                        <span class="task-tag">Процессы</span>
+                    </div>
+                </div>
+                
+                <!-- Задание 23 -->
+                <div class="continuation-card">
+                    <h3><span class="task-number-cont" onclick="scrollToTaskCont('task23')">23</span> Задание №23</h3>
+                    <p>Алгоритмы обработки чисел</p>
+                    <div class="task-content-cont">
+Основные темы:
+1. Подсчет программ для исполнителя
+2. Рекурсия и ДП
+3. Зависимые команды
+4. Ограничения на команды
+
+Методы решения:
+- Рекурсия с кэшированием
+- Динамическое программирование
+- Разделение траекторий
+                    </div>
+                    <div class="task-tags">
+                        <span class="task-tag">Рекурсия</span>
+                        <span class="task-tag">Алгоритмы</span>
+                        <span class="task-tag">Python</span>
+                    </div>
+                </div>
+                
+                <!-- Задание 24 -->
+                <div class="continuation-card">
+                    <h3><span class="task-number-cont" onclick="scrollToTaskCont('task24')">24</span> Задание №24</h3>
+                    <p>Обработка текстовых данных</p>
+                    <div class="task-content-cont">
+Типы задач:
+1. Поиск подстрок
+2. Регулярные выражения
+3. Анализ строк
+4. Метод двух указателей
+
+Инструменты:
+- Срезы строк
+- Методы find(), count()
+- Библиотека re
+- Поиск палиндромов
+                    </div>
+                    <div class="task-tags">
+                        <span class="task-tag">Строки</span>
+                        <span class="task-tag">Python</span>
+                        <span class="task-tag">Регулярки</span>
+                    </div>
+                </div>
+                
+                <!-- Задание 25 -->
+                <div class="continuation-card">
+                    <h3><span class="task-number-cont" onclick="scrollToTaskCont('task25')">25</span> Задание №25</h3>
+                    <p>Обработка целочисленной информации</p>
+                    <div class="task-content-cont">
+Основные темы:
+1. Простые числа и делители
+2. Маски чисел
+3. Количество делителей
+4. Оптимизация перебора
+
+Алгоритмы:
+- Проверка на простоту
+- Разложение на множители
+- Подсчет делителей
+- Поиск по маске
+                    </div>
+                    <div class="task-tags">
+                        <span class="task-tag">Числа</span>
+                        <span class="task-tag">Делители</span>
+                        <span class="task-tag">Маски</span>
+                    </div>
+                </div>
+                
+                <!-- Задание 26 -->
+                <div class="continuation-card">
+                    <h3><span class="task-number-cont" onclick="scrollToTaskCont('task26')">26</span> Задание №26</h3>
+                    <p>Обработка данных с файла</p>
+                    <div class="task-content-cont">
+Типы задач:
+1. Сортировка и отбор
+2. Оптимизация (рюкзак)
+3. Расписание
+4. Хранение данных
+
+Примеры:
+- Файлы пользователей
+- Саженцы
+- Конференц-зал
+- Камеры хранения
+                    </div>
+                    <div class="task-tags">
+                        <span class="task-tag">Файлы</span>
+                        <span class="task-tag">Сортировка</span>
+                        <span class="task-tag">Алгоритмы</span>
+                    </div>
+                </div>
+                
+                <!-- Задание 27 -->
+                <div class="continuation-card">
+                    <h3><span class="task-number-cont" onclick="scrollToTaskCont('task27')">27</span> Задание №27</h3>
+                    <p>Кластеризация данных</p>
+                    <div class="task-content-cont">
+Основные темы:
+1. Кластеризация по координатам
+2. Метод DBSCAN
+3. Поиск центроидов
+4. Анализ звездных систем
+
+Алгоритмы:
+- DBSCAN
+- Евклидово расстояние
+- Разделение прямой/окружностью
+                    </div>
+                    <div class="task-tags">
+                        <span class="task-tag">Кластеризация</span>
+                        <span class="task-tag">DBSCAN</span>
+                        <span class="task-tag">Python</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Секция подробных разборов заданий 22-27 -->
+    <section class="task-continuation" id="task-details22">
+        <div class="container">
+            <div class="section-title">
+                <h2>Подробные разборы заданий (22-27)</h2>
+                <p>Полные объяснения и примеры решений для сложных заданий</p>
+            </div>
+            
+            <div class="task-detail-cont">
+                <!-- Задание 22 -->
+                <div class="task-detail-cont-card" id="task22">
+                    <h3><span class="task-number-cont">22</span> Задание №22: Динамическое программирование в Excel</h3>
+                    
+                    <div class="solution-step">
+                        <p><strong>Основные понятия:</strong></p>
+                        <ul>
+                            <li><strong>Параллельное выполнение</strong> - процессы выполняются одновременно</li>
+                            <li><strong>Последовательное выполнение</strong> - процессы выполняются один за другим</li>
+                            <li><strong>Зависимость процессов</strong> - процесс B зависит от A, если для B нужны результаты A</li>
+                            <li><strong>Диаграмма Ганта</strong> - визуализация расписания выполнения процессов</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="solution-step">
+                        <p><strong>Основные функции Excel:</strong></p>
+                        <table class="table-compact">
+                            <tr>
+                                <th>Функция</th>
+                                <th>Синтаксис</th>
+                                <th>Назначение</th>
+                            </tr>
+                            <tr>
+                                <td>ВПР()</td>
+                                <td>=ВПР(искомое; таблица; столбец; 0)</td>
+                                <td>Поиск значения в таблице</td>
+                            </tr>
+                            <tr>
+                                <td>МАКС()</td>
+                                <td>=МАКС(диапазон)</td>
+                                <td>Максимальное значение</td>
+                            </tr>
+                            <tr>
+                                <td>ЕСЛИ()</td>
+                                <td>=ЕСЛИ(условие; да; нет)</td>
+                                <td>Условное выражение</td>
+                            </tr>
+                            <tr>
+                                <td>СУММ()</td>
+                                <td>=СУММ(диапазон)</td>
+                                <td>Суммирование</td>
+                            </tr>
+                        </table>
+                    </div>
+                    
+                    <div class="highlight">
+                        <p><strong>Пример из методички:</strong> В файле содержится информация о совокупности N вычислительных процессов, которые могут выполняться параллельно или последовательно. Определите минимальное время, через которое завершится выполнение всей совокупности процессов.</p>
+                    </div>
+                    
+                    <div class="solution-step">
+                        <p><strong>Алгоритм решения:</strong></p>
+                        <ol>
+                            <li>Разделить столбец с зависимостями через "Текст по столбцам"</li>
+                            <li>Добавить столбец "Конец" для времени окончания каждого процесса</li>
+                            <li>Использовать ВПР() для поиска времени окончания процессов-предшественников</li>
+                            <li>Для каждого процесса: время_окончания = МАКС(времен_окончания_зависимостей) + время_выполнения</li>
+                            <li>Ответ = МАКС(всех_времён_окончания)</li>
+                        </ol>
+                    </div>
+                    
+                    <div class="code-block">
+| ID | Время | Зависимости | Формула в столбце "Конец" |
+|----|-------|-------------|---------------------------|
+| 1  | 18    | 0           | =B2                       |
+| 2  | 6     | 0           | =B3                       |
+| 3  | 7     | 2           | =МАКС(ВПР(C4;$A$2:$D$16;4;0))+B4 |
+| 4  | 5     | 3           | =МАКС(ВПР(C5;$A$2:$D$16;4;0))+B5 |
+| 5  | 8     | 0           | =B6                       |
+                    </div>
+                    
+                    <div class="tip-note">
+                        <p><strong>Совет:</strong> Обязательно используйте абсолютные ссылки ($A$2:$D$16) в функции ВПР(), чтобы при копировании формулы диапазон поиска не смещался.</p>
+                    </div>
+                    
+                    <div class="warning-note">
+                        <p><strong>Важно:</strong> Для корректной работы функции ВПР() необходимо, чтобы искомое значение находилось в первом столбце диапазона поиска. Поэтому ID процессов должны быть в столбце A.</p>
+                    </div>
+                    
+                    <p><strong>Ответ для примера из методички:</strong> 51</p>
+                </div>
+                
+                <!-- Задание 23 -->
+                <div class="task-detail-cont-card" id="task23">
+                    <h3><span class="task-number-cont">23</span> Задание №23: Алгоритмы обработки чисел</h3>
+                    
+                    <div class="solution-step">
+                        <p><strong>Типичные формулировки:</strong></p>
+                        <ul>
+                            <li>"Сколько существует программ, преобразующих число A в число B?"</li>
+                            <li>"Траектория должна содержать/не содержать число N"</li>
+                            <li>"Запрещено выполнять команду более K раз подряд"</li>
+                            <li>"Нельзя повторять команду, сделанную на предыдущем шаге"</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="solution-step">
+                        <p><strong>Методы решения:</strong></p>
+                        <ol>
+                            <li><strong>Рекурсия</strong> - функция вызывает саму себя для подсчета путей</li>
+                            <li><strong>Динамическое программирование</strong> - заполнение массива значений</li>
+                            <li><strong>Разделение траектории</strong> - произведение количества путей до и после обязательной точки</li>
+                        </ol>
+                    </div>
+                    
+                    <div class="highlight">
+                        <p><strong>Пример из методички:</strong> Исполнитель Щелчок имеет команды: 1) Прибавить 3; 2) Умножить на 2; 3) Прибавить 1. Сколько существует программ, для которых при исходном числе 2 результатом является число 30, при этом траектория вычислений содержит число 10?</p>
+                    </div>
+                    
+                    <div class="solution-step">
+                        <p><strong>Решение рекурсией с кэшированием:</strong></p>
+                    </div>
+                    
+                    <div class="code-block">
+from functools import lru_cache
+
+@lru_cache(None)
+def f(a, b, flag=False):
+    if a > b:
+        return 0
+    if a == b:
+        return 1 if flag else 0
+    if a == 10:
+        flag = True
+    return f(a+3, b, flag) + f(a*2, b, flag) + f(a+1, b, flag)
+
+print(f(2, 30, False))
+                    </div>
+                    
+                    <div class="solution-step">
+                        <p><strong>Решение через разделение траектории:</strong></p>
+                    </div>
+                    
+                    <div class="code-block">
+@lru_cache(None)
+def f_simple(a, b):
+    if a > b:
+        return 0
+    if a == b:
+        return 1
+    return f_simple(a+3, b) + f_simple(a*2, b) + f_simple(a+1, b)
+
+# Количество путей от 2 до 30 через 10 = 
+# (пути от 2 до 10) * (пути от 10 до 30)
+print(f_simple(2, 10) * f_simple(10, 30))
+                    </div>
+                    
+                    <div class="solution-step">
+                        <p><strong>Решение динамическим программированием:</strong></p>
+                    </div>
+                    
+                    <div class="code-block">
+# Создаем массив для хранения количества путей
+dp = [0] * 31
+dp[2] = 1  # Начальное состояние
+
+for i in range(2, 31):
+    if i + 3 <= 30:
+        dp[i+3] += dp[i]
+    if i * 2 <= 30:
+        dp[i*2] += dp[i]
+    if i + 1 <= 30:
+        dp[i+1] += dp[i]
+
+print(dp[30])
+                    </div>
+                    
+                    <div class="tip-note">
+                        <p><strong>Совет:</strong> Для задач с обязательным посещением нескольких чисел используйте битовую маску или несколько флагов в параметрах функции.</p>
+                    </div>
+                    
+                    <div class="warning-note">
+                        <p><strong>Важно:</strong> При использовании рекурсии обязательно добавляйте кэширование (@lru_cache), иначе программа будет работать очень медленно для больших значений.</p>
+                    </div>
+                    
+                    <p><strong>Ответ для примера:</strong> Зависит от конкретных чисел в задании</p>
+                </div>
+                
+                <!-- Задание 24 -->
+                <div class="task-detail-cont-card" id="task24">
+                    <h3><span class="task-number-cont">24</span> Задание №24: Обработка текстовых данных</h3>
+                    
+                    <div class="solution-step">
+                        <p><strong>Основные методы работы со строками в Python:</strong></p>
+                        <table class="table-compact">
+                            <tr>
+                                <th>Метод</th>
+                                <th>Описание</th>
+                                <th>Пример</th>
+                            </tr>
+                            <tr>
+                                <td>s.find(sub)</td>
+                                <td>Индекс первого вхождения</td>
+                                <td>"abc".find("b") → 1</td>
+                            </tr>
+                            <tr>
+                                <td>s.count(sub)</td>
+                                <td>Количество вхождений</td>
+                                <td>"aba".count("a") → 2</td>
+                            </tr>
+                            <tr>
+                                <td>s.replace(old, new)</td>
+                                <td>Замена подстрок</td>
+                                <td>"aba".replace("a","c") → "cbc"</td>
+                            </tr>
+                            <tr>
+                                <td>s.split(delim)</td>
+                                <td>Разделение строки</td>
+                                <td>"a,b,c".split(",") → ["a","b","c"]</td>
+                            </tr>
+                            <tr>
+                                <td>len(s)</td>
+                                <td>Длина строки</td>
+                                <td>len("abc") → 3</td>
+                            </tr>
+                        </table>
+                    </div>
+                    
+                    <div class="solution-step">
+                        <p><strong>Регулярные выражения:</strong></p>
+                        <table class="table-compact">
+                            <tr>
+                                <th>Символ</th>
+                                <th>Значение</th>
+                                <th>Пример</th>
+                            </tr>
+                            <tr>
+                                <td>\d</td>
+                                <td>Цифра</td>
+                                <td>\d\d найдет "12", "45"</td>
+                            </tr>
+                            <tr>
+                                <td>\w</td>
+                                <td>Буква/цифра</td>
+                                <td>\w\w найдет "ab", "12"</td>
+                            </tr>
+                            <tr>
+                                <td>.</td>
+                                <td>Любой символ</td>
+                                <td>a.b найдет "acb", "a5b"</td>
+                            </tr>
+                            <tr>
+                                <td>*</td>
+                                <td>0 или более</td>
+                                <td>a*b найдет "b", "ab", "aaab"</td>
+                            </tr>
+                            <tr>
+                                <td>+</td>
+                                <td>1 или более</td>
+                                <td>a+b найдет "ab", "aaab"</td>
+                            </tr>
+                            <tr>
+                                <td>?</td>
+                                <td>0 или 1</td>
+                                <td>a?b найдет "b", "ab"</td>
+                            </tr>
+                        </table>
+                    </div>
+                    
+                    <div class="highlight">
+                        <p><strong>Пример из методички:</strong> В текстовом файле находится цепочка из символов латинского алфавита A, B, C, D, E, F. Определите максимальное количество идущих подряд пар символов FA или EC.</p>
+                    </div>
+                    
+                    <div class="solution-step">
+                        <p><strong>Решение через замену:</strong></p>
+                    </div>
+                    
+                    <div class="code-block">
+with open('24.txt') as f:
+    s = f.readline()
+
+# Заменяем искомые пары на специальный символ
+s = s.replace('FA', '*').replace('EC', '*')
+
+max_count = 0
+current_count = 0
+
+for char in s:
+    if char == '*':
+        current_count += 1
+        max_count = max(max_count, current_count)
+    else:
+        current_count = 0
+
+print(max_count)
+                    </div>
+                    
+                    <div class="solution-step">
+                        <p><strong>Метод двух указателей:</strong></p>
+                    </div>
+                    
+                    <div class="code-block">
+with open('24.txt') as f:
+    s = f.readline()
+
+max_len = 0
+start = 0
+
+for end in range(len(s)-1):
+    # Проверяем, является ли пара допустимой
+    pair = s[end:end+2]
+    if pair not in ['FA', 'EC']:
+        start = end + 1
+    max_len = max(max_len, end - start + 2)
+
+print(max_len // 2)  # Делим на 2, так как считаем пары
+                    </div>
+                    
+                    <div class="solution-step">
+                        <p><strong>Пример с регулярными выражениями:</strong></p>
+                    </div>
+                    
+                    <div class="code-block">
+import re
+
+with open('24.txt') as f:
+    s = f.readline()
+
+# Ищем максимальную последовательность из (FA|EC)
+pattern = r'(?:FA|EC)+'
+matches = re.findall(pattern, s)
+
+if matches:
+    max_len = max(len(match) for match in matches)
+    print(max_len // 2)  # Делим на 2, так как FA и EC - это пары
+else:
+    print(0)
+                    </div>
+                    
+                    <div class="tip-note">
+                        <p><strong>Совет:</strong> Для поиска максимальной длины последовательности, удовлетворяющей условию, часто эффективнее использовать метод двух указателей вместо полного перебора всех подстрок.</p>
+                    </div>
+                    
+                    <div class="warning-note">
+                        <p><strong>Важно:</strong> При работе с большими файлами (до 10⁶ символов) используйте эффективные алгоритмы. Метод с заменой и поиском подстрок через умножение (if i*'*' in s) может быть неэффективным.</p>
+                    </div>
+                    
+                    <p><strong>Ответ для примера:</strong> Зависит от данных в файле</p>
+                </div>
+                
+                <!-- Задание 25 -->
+                <div class="task-detail-cont-card" id="task25">
+                    <h3><span class="task-number-cont">25</span> Задание №25: Обработка целочисленной информации</h3>
+                    
+                    <div class="solution-step">
+                        <p><strong>Основные понятия:</strong></p>
+                        <ul>
+                            <li><strong>Простые числа</strong> - числа больше 1, которые делятся только на 1 и себя</li>
+                            <li><strong>Количество делителей</strong> τ(n) = (α₁+1)·(α₂+1)·...·(αₖ+1), где n = p₁^α₁·p₂^α₂·...·pₖ^αₖ</li>
+                            <li><strong>Парные делители</strong> - если a·b = n и a < √n, то b > √n</li>
+                            <li><strong>Маска числа</strong> - шаблон для поиска чисел по определенному правилу</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="solution-step">
+                        <p><strong>Оптимизированные функции:</strong></p>
+                    </div>
+                    
+                    <div class="code-block">
+# Проверка числа на простоту (до корня)
+def is_prime(n):
+    if n < 2:
+        return False
+    for i in range(2, int(n**0.5) + 1):
+        if n % i == 0:
+            return False
+    return True
+
+# Количество делителей (до корня)
+def count_divisors(n):
+    count = 0
+    for i in range(1, int(n**0.5) + 1):
+        if n % i == 0:
+            count += 1
+            if n // i != i:  # Учитываем парный делитель
+                count += 1
+    return count
+
+# Все делители числа
+def get_divisors(n):
+    divisors = []
+    for i in range(1, int(n**0.5) + 1):
+        if n % i == 0:
+            divisors.append(i)
+            if n // i != i:
+                divisors.append(n // i)
+    return sorted(divisors)
+                    </div>
+                    
+                    <div class="highlight">
+                        <p><strong>Пример из методички:</strong> Найдите все натуральные числа N, принадлежащие отрезку [250000000; 700000000], которые можно представить в виде N = 2^m · 5^n, где m – четное число, n – нечетное число. В ответе запишите количество таких чисел.</p>
+                    </div>
+                    
+                    <div class="solution-step">
+                        <p><strong>Решение:</strong></p>
+                    </div>
+                    
+                    <div class="code-block">
+count = 0
+
+# Перебираем степени двойки и пятерки
+for m in range(0, 31, 2):  # m - четное
+    for n in range(1, 31, 2):  # n - нечетное
+        number = 2**m * 5**n
+        if 250000000 <= number <= 700000000:
+            count += 1
+
+print(count)
+                    </div>
+                    
+                    <div class="solution-step">
+                        <p><strong>Решение с использованием модуля fnmatch:</strong></p>
+                    </div>
+                    
+                    <div class="code-block">
+from fnmatch import fnmatch
+
+# Пример: найти все числа до 10^8, соответствующие маске 82??9*
+# и являющиеся полными квадратами
+
+count = 0
+for x in range(10**4, 10**8 + 1):
+    if x**0.5 == int(x**0.5):  # Проверка на полный квадрат
+        if fnmatch(str(x), '82??9*'):
+            # Дополнительная проверка на количество делителей
+            if count_divisors(x) > 25:
+                count += 1
+                print(x)
+
+print(f"Найдено чисел: {count}")
+                    </div>
+                    
+                    <div class="solution-step">
+                        <p><strong>Математические хитрости:</strong></p>
+                        <ul>
+                            <li>Числа вида p⁴ (простое в 4 степени) имеют 5 делителей</li>
+                            <li>Числа вида p⁶ имеют 7 делителей</li>
+                            <li>Если нужно ровно 3 простых делителя, ищем числа вида p·q·r или p²·q</li>
+                            <li>Количество нечетных делителей не зависит от степени двойки в разложении</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="tip-note">
+                        <p><strong>Совет:</strong> Для больших диапазонов не перебирайте все числа. Вместо этого генерируйте числа по условию. Например, для поиска чисел с 5 делителями генерируйте простые числа и возводите их в 4 степень.</p>
+                    </div>
+                    
+                    <div class="warning-note">
+                        <p><strong>Важно:</strong> Не используйте извлечение корней высокой степени (больше 2) из-за проблем с точностью вычислений с плавающей точкой. Лучше возводите числа в степень.</p>
+                    </div>
+                    
+                    <p><strong>Ответ для примера с 2^m·5^n:</strong> 4</p>
+                </div>
+                
+                <!-- Задание 26 -->
+                <div class="task-detail-cont-card" id="task26">
+                    <h3><span class="task-number-cont">26</span> Задание №26: Обработка данных с файла</h3>
+                    
+                    <div class="solution-step">
+                        <p><strong>Типичные задачи:</strong></p>
+                        <ol>
+                            <li><strong>Задача о файлах пользователей</strong> - рюкзак с сортировкой по убыванию</li>
+                            <li><strong>Задача о саженцах</strong> - поиск последовательностей в таблице</li>
+                            <li><strong>Задача о конференц-зале</strong> - жадный алгоритм расписания</li>
+                            <li><strong>Задача о студентах</strong> - сложная сортировка по нескольким критериям</li>
+                            <li><strong>Задача о камерах хранения</strong> - моделирование очереди</li>
+                        </ol>
+                    </div>
+                    
+                    <div class="highlight">
+                        <p><strong>Пример из методички (Файлы пользователей):</strong> Системный администратор создает архив пользовательских файлов. Объем диска может быть меньше суммарного объема файлов. В первую очередь сохраняются наибольшие по объему файлы. Определите максимальное число пользователей, чьи файлы можно сохранить в архиве, а также размер минимального сохраненного файла.</p>
+                    </div>
+                    
+                    <div class="solution-step">
+                        <p><strong>Решение (жадный алгоритм):</strong></p>
+                    </div>
+                    
+                    <div class="code-block">
+with open('26.txt') as f:
+    s, n = map(int, f.readline().split())
+    files = [int(line) for line in f]
+
+# Сортируем файлы по убыванию
+files.sort(reverse=True)
+
+total = 0
+count = 0
+min_file = 0
+
+for file_size in files:
+    if total + file_size <= s:
+        total += file_size
+        count += 1
+        min_file = file_size  # Так как идем от больших к меньшим
+
+print(count, min_file)
+                    </div>
+                    
+                    <div class="solution-step">
+                        <p><strong>Пример с саженцами:</strong></p>
+                    </div>
+                    
+                    <div class="code-block">
+with open('26.txt') as f:
+    n = int(f.readline())
+    trees = [list(map(int, line.split())) for line in f]
+
+# Удаляем дубликаты (ошибка аэросъемки)
+unique_trees = list(set(tuple(tree) for tree in trees))
+
+# Сортируем по ряду и месту
+unique_trees.sort(key=lambda x: (x[0], x[1]))
+
+max_row = 0
+min_place = 10**10
+
+# Ищем три подряд идущих саженца с пропуском одного места
+for i in range(len(unique_trees) - 2):
+    row1, place1 = unique_trees[i]
+    row2, place2 = unique_trees[i+1]
+    row3, place3 = unique_trees[i+2]
+    
+    if row1 == row2 == row3:  # Все в одном ряду
+        if place2 - place1 == 2 and place3 - place2 == 2:  # Пропуск одного места
+            if row1 > max_row:
+                max_row = row1
+                min_place = place1 + 1  # Первое пропущенное место
+            elif row1 == max_row:
+                min_place = min(min_place, place1 + 1)
+
+print(max_row, min_place)
+                    </div>
+                    
+                    <div class="solution-step">
+                        <p><strong>Пример с конференц-залом (жадный алгоритм):</strong></p>
+                    </div>
+                    
+                    <div class="code-block">
+with open('26.txt') as f:
+    n = int(f.readline())
+    events = [list(map(int, line.split())) for line in f]
+
+# Сортируем по времени окончания, затем по времени начала
+events.sort(key=lambda x: (x[1], x[0]))
+
+selected = [events[0]]  # Выбираем первое мероприятие
+
+for event in events[1:]:
+    start, end = event
+    # Если начало текущего мероприятия >= окончания последнего выбранного
+    if start >= selected[-1][1]:
+        selected.append(event)
+
+# Минимальное время начала последнего мероприятия
+# Ищем все мероприятия, которые можно поставить последними
+last_end = selected[-2][1] if len(selected) > 1 else 0
+min_last_start = min([start for start, end in events if start >= last_end])
+
+print(len(selected), min_last_start)
+                    </div>
+                    
+                    <div class="tip-note">
+                        <p><strong>Совет:</strong> Для задач на расписание (конференц-зал, транспорт и т.д.) обычно оптимально использовать жадный алгоритм: сортировать по времени окончания и выбирать мероприятия, которые не пересекаются с уже выбранными.</p>
+                    </div>
+                    
+                    <div class="warning-note">
+                        <p><strong>Важно:</strong> Внимательно читайте условие задачи. В некоторых задачах (как с файлами пользователей) нужно сортировать по убыванию, в других (как с конференц-залом) - по возрастанию времени окончания.</p>
+                    </div>
+                    
+                    <p><strong>Ответ для задачи о файлах пользователей из методички:</strong> 90 13</p>
+                </div>
+                
+                <!-- Задание 27 -->
+                <div class="task-detail-cont-card" id="task27">
+                    <h3><span class="task-number-cont">27</span> Задание №27: Кластеризация данных</h3>
+                    
+                    <div class="solution-step">
+                        <p><strong>Основные понятия:</strong></p>
+                        <ul>
+                            <li><strong>Кластеризация</strong> - группировка объектов по схожести</li>
+                            <li><strong>Центроид</strong> - точка в кластере с минимальной суммой расстояний до других точек</li>
+                            <li><strong>Антицентр/перифероид</strong> - точка с максимальной суммой расстояний</li>
+                            <li><strong>Аномалии/мусорные точки</strong> - точки, не принадлежащие ни одному кластеру</li>
+                            <li><strong>DBSCAN</strong> - алгоритм кластеризации с заданным радиусом</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="solution-step">
+                        <p><strong>Евклидово расстояние:</strong></p>
+                    </div>
+                    
+                    <div class="code-block">
+import math
+
+def distance(p1, p2):
+    """Вычисляет евклидово расстояние между двумя точками"""
+    return math.sqrt((p2[0] - p1[0])**2 + (p2[1] - p1[1])**2)
+
+# Пример использования
+point1 = (1, 2)
+point2 = (4, 6)
+dist = distance(point1, point2)  # Результат: 5.0
+                    </div>
+                    
+                    <div class="solution-step">
+                        <p><strong>Реализация DBSCAN:</strong></p>
+                    </div>
+                    
+                    <div class="code-block">
+def dbscan(points, radius, min_points=1):
+    """Реализация алгоритма DBSCAN"""
+    clusters = []
+    visited = set()
+    
+    for i, point in enumerate(points):
+        if i in visited:
+            continue
+            
+        visited.add(i)
+        neighbors = []
+        
+        # Ищем соседей в радиусе radius
+        for j, other_point in enumerate(points):
+            if i != j and distance(point, other_point) <= radius:
+                neighbors.append(j)
+        
+        # Если достаточно соседей, создаем новый кластер
+        if len(neighbors) >= min_points:
+            cluster = [point]
+            cluster_indices = {i}
+            
+            # Расширяем кластер
+            for neighbor_idx in neighbors:
+                if neighbor_idx not in visited:
+                    visited.add(neighbor_idx)
+                    cluster.append(points[neighbor_idx])
+                    cluster_indices.add(neighbor_idx)
+                    
+                    # Ищем соседей для соседа
+                    new_neighbors = []
+                    for k, other_point in enumerate(points):
+                        if (k not in cluster_indices and 
+                            distance(points[neighbor_idx], other_point) <= radius):
+                            new_neighbors.append(k)
+                    
+                    # Добавляем новых соседей
+                    for new_idx in new_neighbors:
+                        if new_idx not in neighbors:
+                            neighbors.append(new_idx)
+            
+            clusters.append(cluster)
+        else:
+            # Точка-шум (аномалия)
+            pass
+    
+    return clusters
+                    </div>
+                    
+                    <div class="highlight">
+                        <p><strong>Пример из методички:</strong> Ученый решил провести кластеризацию множества звезд. Кластер звезд - это набор точек, лежащий внутри круга радиусом R. Центроид - звезда с минимальной суммой расстояний до других звезд кластера. Определите координаты центроидов и вычислите Px и Py.</p>
+                    </div>
+                    
+                    <div class="solution-step">
+                        <p><strong>Решение с разделением по координатам:</strong></p>
+                    </div>
+                    
+                    <div class="code-block">
+def find_centroid(cluster):
+    """Находит центроид в кластере"""
+    min_distance_sum = float('inf')
+    centroid = None
+    
+    for point in cluster:
+        distance_sum = 0
+        for other_point in cluster:
+            if point != other_point:
+                distance_sum += distance(point, other_point)
+        
+        if distance_sum < min_distance_sum:
+            min_distance_sum = distance_sum
+            centroid = point
+    
+    return centroid
+
+# Чтение данных из файла
+with open('27.txt') as f:
+    points = []
+    for line in f:
+        if line.strip():  # Пропускаем пустые строки
+            x, y = map(float, line.replace(',', '.').split())
+            points.append((x, y))
+
+# Разделяем на кластеры по координатам (пример)
+clusters = [[], [], [], []]  # 4 кластера
+
+for x, y in points:
+    if -2 < x < 3.5 and 0.5 < y < 6:
+        clusters[0].append((x, y))
+    elif (x-6)**2 + y**2 < 2.5**2:
+        clusters[1].append((x, y))
+    elif y < 0.5*x:
+        clusters[2].append((x, y))
+    else:
+        clusters[3].append((x, y))
+
+# Находим центроиды
+centroids = []
+for cluster in clusters:
+    if cluster:  # Если кластер не пустой
+        centroid = find_centroid(cluster)
+        centroids.append(centroid)
+
+# Вычисляем Px и Py
+if centroids:
+    px = sum(c[0] for c in centroids) / len(centroids)
+    py = sum(c[1] for c in centroids) / len(centroids)
+    print(f"Px = {px}, Py = {py}")
+                    </div>
+                    
+                    <div class="solution-step">
+                        <p><strong>Решение с DBSCAN:</strong></p>
+                    </div>
+                    
+                    <div class="code-block">
+from math import sqrt
+
+def dbscan_simple(points, radius):
+    """Упрощенная версия DBSCAN для задачи 27"""
+    clusters = []
+    unvisited = points.copy()
+    
+    while unvisited:
+        current = unvisited.pop(0)
+        cluster = [current]
+        
+        # Ищем все точки в радиусе
+        i = 0
+        while i < len(cluster):
+            point = cluster[i]
+            j = 0
+            while j < len(unvisited):
+                other = unvisited[j]
+                if distance(point, other) <= radius:
+                    cluster.append(other)
+                    unvisited.pop(j)
+                else:
+                    j += 1
+            i += 1
+        
+        clusters.append(cluster)
+    
+    # Фильтруем маленькие кластеры (аномалии)
+    significant_clusters = [c for c in clusters if len(c) > 10]
+    
+    return significant_clusters
+
+# Использование
+clusters = dbscan_simple(points, radius=0.7)
+centroids = [find_centroid(c) for c in clusters]
+                    </div>
+                    
+                    <div class="solution-step">
+                        <p><strong>Антицентр (максимальная сумма расстояний):</strong></p>
+                    </div>
+                    
+                    <div class="code-block">
+def find_anticenter(cluster):
+    """Находит антицентр в кластере (точку с макс. суммой расстояний)"""
+    max_distance_sum = -1
+    anticenter = None
+    
+    for point in cluster:
+        distance_sum = 0
+        for other_point in cluster:
+            if point != other_point:
+                distance_sum += distance(point, other_point)
+        
+        if distance_sum > max_distance_sum:
+            max_distance_sum = distance_sum
+            anticenter = point
+    
+    return anticenter
+                    </div>
+                    
+                    <div class="tip-note">
+                        <p><strong>Совет:</strong> Перед решением задачи постройте диаграмму рассеяния в Excel (Вставка → Диаграммы → Точечная). Это поможет понять, как кластеры расположены и какой метод разделения использовать.</p>
+                    </div>
+                    
+                    <div class="warning-note">
+                        <p><strong>Важно:</strong> В задачах с третьим параметром (например, блеск звезды) не забывайте исключать его при вычислении расстояний, иначе кластеризация будет неправильной: используйте distance(p1[:2], p2[:2]) вместо distance(p1, p2).</p>
+                    </div>
+                    
+                    <p><strong>Ответ для примера из методички:</strong> Зависит от конкретных данных</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Секция справочных материалов -->
     <section class="reference" id="reference">
         <div class="container">
@@ -2151,8 +3252,8 @@ t - время
         <div class="container">
             <div class="stats-grid">
                 <div class="stat-item">
-                    <h3>21</h3>
-                    <p>Основных заданий</p>
+                    <h3>27</h3>
+                    <p>Заданий всего</p>
                 </div>
                 <div class="stat-item">
                     <h3>235</h3>
@@ -2183,8 +3284,8 @@ t - время
                     <h3>Быстрые ссылки</h3>
                     <ul style="list-style: none;">
                         <li><a href="#" style="color: #ccc; text-decoration: none;">Главная</a></li>
-                        <li><a href="#tasks" style="color: #ccc; text-decoration: none;">Задания</a></li>
-                        <li><a href="#task-details" style="color: #ccc; text-decoration: none;">Разборы</a></li>
+                        <li><a href="#tasks" style="color: #ccc; text-decoration: none;">Задания 1-21</a></li>
+                        <li><a href="#tasks22" style="color: #ccc; text-decoration: none;">Задания 22-27</a></li>
                         <li><a href="#reference" style="color: #ccc; text-decoration: none;">Справочник</a></li>
                     </ul>
                 </div>
@@ -2197,17 +3298,16 @@ t - время
             </div>
             
             <div class="footer-bottom">
-                <p>&copy; 2025 УЧИ.ИНФУ ЕГЭ - Подготовка к ЕГЭ по информатике</p>
+                <p>&copy; 2025 УЧИ.ИНФУ ЕГЭ - Полная подготовка к ЕГЭ по информатике</p>
             </div>
         </div>
     </footer>
 
     <script>
-        // Функция для плавной прокрутки к заданию
+        // Функция для плавной прокрутки к заданию (1-21)
         function scrollToTask(taskId) {
             const element = document.getElementById(taskId);
             if (element) {
-                // Прокрутка к элементу с учетом высоты фиксированного заголовка
                 const offsetTop = element.offsetTop - 80;
                 window.scrollTo({
                     top: offsetTop,
@@ -2216,6 +3316,27 @@ t - время
                 
                 // Добавляем визуальный эффект выделения
                 element.style.backgroundColor = '#fff9e6';
+                element.style.transition = 'background-color 0.5s';
+                
+                // Убираем выделение через 2 секунды
+                setTimeout(() => {
+                    element.style.backgroundColor = '';
+                }, 2000);
+            }
+        }
+
+        // Функция для плавной прокрутки к заданию (22-27)
+        function scrollToTaskCont(taskId) {
+            const element = document.getElementById(taskId);
+            if (element) {
+                const offsetTop = element.offsetTop - 80;
+                window.scrollTo({
+                    top: offsetTop,
+                    behavior: 'smooth'
+                });
+                
+                // Добавляем визуальный эффект выделения
+                element.style.backgroundColor = '#e6f7ff';
                 element.style.transition = 'background-color 0.5s';
                 
                 // Убираем выделение через 2 секунды
@@ -2243,21 +3364,93 @@ t - время
             });
         });
 
-        // Добавляем обработчики для быстрой навигации
+        // Добавляем обработчики для быстрой навигации (1-21)
         document.querySelectorAll('.quick-nav a').forEach(link => {
             link.addEventListener('click', function(e) {
                 e.preventDefault();
                 const targetId = this.getAttribute('href');
-                scrollToTask(targetId.substring(1)); // Убираем # из ID
+                if (targetId.startsWith('#task')) {
+                    scrollToTask(targetId.substring(1));
+                }
             });
         });
 
-        // Добавляем обработчики для номеров заданий
+        // Добавляем обработчики для номеров заданий (1-21)
         document.querySelectorAll('.task-number').forEach(number => {
             number.addEventListener('click', function() {
-                const taskId = this.parentElement.parentElement.id || 
-                              this.closest('.task-card').querySelector('h3').textContent.match(/Задание №(\d+)/)[1];
-                scrollToTask('task' + taskId);
+                const taskCard = this.closest('.task-card');
+                const taskNumber = this.textContent;
+                if (taskNumber.includes('-')) {
+                    // Для заданий 19-21
+                    scrollToTask('task19');
+                } else {
+                    scrollToTask('task' + taskNumber);
+                }
+            });
+        });
+
+        // Добавляем обработчики для номеров заданий (22-27)
+        document.querySelectorAll('.task-number-cont').forEach(number => {
+            number.addEventListener('click', function() {
+                const taskCard = this.closest('.continuation-card');
+                const taskNumber = this.textContent;
+                scrollToTaskCont('task' + taskNumber);
+            });
+        });
+
+        // Подсветка кода при клике
+        document.querySelectorAll('.code-block, .reference-code').forEach(block => {
+            block.addEventListener('click', function() {
+                const range = document.createRange();
+                range.selectNodeContents(this);
+                const selection = window.getSelection();
+                selection.removeAllRanges();
+                selection.addRange(range);
+                
+                // Визуальная обратная связь
+                this.style.backgroundColor = '#4a5568';
+                setTimeout(() => {
+                    this.style.backgroundColor = '#2d3748';
+                }, 300);
+            });
+        });
+
+        // Добавляем кнопку "Наверх"
+        const scrollToTopBtn = document.createElement('button');
+        scrollToTopBtn.innerHTML = '↑';
+        scrollToTopBtn.style.cssText = `
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: #667eea;
+            color: white;
+            border: none;
+            font-size: 20px;
+            cursor: pointer;
+            display: none;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        `;
+        
+        document.body.appendChild(scrollToTopBtn);
+        
+        // Показываем кнопку при прокрутке
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                scrollToTopBtn.style.display = 'block';
+            } else {
+                scrollToTopBtn.style.display = 'none';
+            }
+        });
+        
+        // Прокрутка наверх при клике
+        scrollToTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
             });
         });
     </script>
